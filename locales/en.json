@@ -1,0 +1,204 @@
+{
+  "common": {
+    "home": "Home",
+    "products": "Products",
+    "cart": "Cart",
+    "account": "Account",
+    "search": "Search",
+    "backToHome": "Back to Home",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "view": "View",
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "confirm": "Confirm",
+    "back": "Back"
+  },
+  "navigation": {
+    "menu": "Menu",
+    "searchPlaceholder": "Search products...",
+    "account": "My Account",
+    "orders": "My Orders",
+    "favorites": "Favorites",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "home": {
+    "hero": {
+      "title": "Welcome to Henrique Store",
+      "subtitle": "Discover amazing products with the best prices and guaranteed quality",
+      "viewProducts": "View Products",
+      "specialOffers": "Special Offers"
+    },
+    "featured": {
+      "title": "Featured Products",
+      "subtitle": "The most popular and highly rated products by our customers",
+      "viewAll": "View All Products"
+    },
+    "benefits": {
+      "freeShipping": {
+        "title": "Free Shipping",
+        "description": "On orders over $100"
+      },
+      "securePurchase": {
+        "title": "Secure Purchase",
+        "description": "100% secure payment"
+      },
+      "fastDelivery": {
+        "title": "Fast Delivery",
+        "description": "Delivery within 48h"
+      }
+    }
+  },
+  "products": {
+    "viewDetails": "View Details",
+    "addToCart": "Add to Cart",
+    "buyNow": "Buy Now",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "description": "Description",
+    "specifications": "Specifications",
+    "reviews": "reviews",
+    "sold": "sold",
+    "save": "Save",
+    "notFound": "Product not found"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "subtitle": "Review your items before completing your purchase",
+    "items": "Items",
+    "empty": {
+      "title": "Your cart is empty",
+      "description": "Add some products to start shopping",
+      "startShopping": "Start Shopping"
+    },
+    "summary": {
+      "title": "Order Summary",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "tax": "Tax",
+      "total": "Total",
+      "free": "Free",
+      "checkout": "Checkout",
+      "continueShopping": "Continue Shopping",
+      "secureCheckout": "Secure Checkout"
+    }
+  },
+  "checkout": {
+    "title": "Checkout",
+    "subtitle": "Complete your information to finish your order",
+    "empty": {
+      "title": "Empty cart",
+      "description": "Add products to cart before checkout",
+      "startShopping": "Start Shopping"
+    },
+    "shipping": {
+      "title": "Shipping Information",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Your first name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Your last name",
+      "email": "Email",
+      "emailPlaceholder": "your.email.com",
+      "phone": "Phone",
+      "phonePlaceholder": "(11) 99999-9999",
+      "address": "Address",
+      "addressPlaceholder": "Street, number, complement",
+      "city": "City",
+      "cityPlaceholder": "Your city",
+      "state": "State",
+      "selectState": "Select state",
+      "zipCode": "ZIP Code",
+      "zipCodePlaceholder": "00000-000"
+    },
+    "payment": {
+      "title": "Payment Information",
+      "method": "Payment Method",
+      "creditCard": "Credit Card",
+      "creditCardDescription": "Pay with credit card",
+      "pix": "PIX",
+      "pixDescription": "Pay instantly with PIX",
+      "boleto": "Bank Slip",
+      "boletoDescription": "Pay with bank slip",
+      "cardNumber": "Card Number",
+      "cardNumberPlaceholder": "0000 0000 0000 0000",
+      "expiryDate": "Expiry Date",
+      "expiryDatePlaceholder": "MM/YY",
+      "cvv": "CVV",
+      "cvvPlaceholder": "123"
+    },
+    "summary": {
+      "title": "Order Summary",
+      "quantity": "Quantity",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "tax": "Tax",
+      "total": "Total",
+      "free": "Free",
+      "placeOrder": "Place Order",
+      "processing": "Processing...",
+      "secureCheckout": "Secure Checkout"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Login",
+      "subtitle": "Access your account",
+      "email": "Email",
+      "password": "Password",
+      "forgotPassword": "Forgot password?",
+      "submit": "Login",
+      "noAccount": "Don't have an account?",
+      "signup": "Sign up"
+    },
+    "register": {
+      "title": "Register",
+      "subtitle": "Create your account",
+      "name": "Name",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "submit": "Register",
+      "hasAccount": "Already have an account?",
+      "signin": "Sign in"
+    }
+  },
+  "profile": {
+    "title": "My Profile",
+    "personalInfo": "Personal Information",
+    "orders": "My Orders",
+    "favorites": "Favorites",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "success": {
+    "title": "Order completed successfully!",
+    "subtitle": "Thank you for choosing Henrique Store. Your order has been confirmed and is being processed.",
+    "orderDetails": "Order Details",
+    "orderNumber": "Order Number",
+    "date": "Date",
+    "status": "Status",
+    "total": "Total",
+    "processing": "Processing",
+    "emailSent": "Email sent",
+    "emailInfo": "You will receive an email with order details and tracking information.",
+    "continueShopping": "Continue Shopping",
+    "viewOrders": "View My Orders"
+  },
+  "footer": {
+    "about": "About",
+    "contact": "Contact",
+    "terms": "Terms of Use",
+    "privacy": "Privacy Policy",
+    "newsletter": "Newsletter",
+    "subscribe": "Subscribe",
+    "emailPlaceholder": "Your email"
+  }
+}

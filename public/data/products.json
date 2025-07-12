@@ -1,0 +1,168 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "slug": "smartphone-galaxy-s23",
+      "name": "Smartphone Galaxy S23",
+      "description": "O Samsung Galaxy S23 oferece desempenho excepcional com processador Snapdragon 8 Gen 2, câmera de 50MP e bateria de longa duração. Ideal para fotografia profissional e multitarefa intensiva.",
+      "price": 2999.99,
+      "originalPrice": 3499.99,
+      "image": "/images/products/smartphone-galaxy-s23.jpg",
+      "gallery": [
+        "/images/products/smartphone-galaxy-s23-1.jpg",
+        "/images/products/smartphone-galaxy-s23-2.jpg",
+        "/images/products/smartphone-galaxy-s23-3.jpg"
+      ],
+      "rating": 4.8,
+      "reviews": 1250,
+      "soldCount": 2340,
+      "category": "electronics",
+      "tags": ["smartphone", "samsung", "5g", "camera"],
+      "specs": {
+        "screen": "6.1\" Dynamic AMOLED 2X",
+        "processor": "Snapdragon 8 Gen 2",
+        "storage": "128GB",
+        "ram": "8GB",
+        "battery": "3900mAh",
+        "camera": "50MP + 12MP + 10MP"
+      },
+      "inStock": true,
+      "isFeatured": true
+    },
+    {
+      "id": 2,
+      "slug": "fone-ouvido-wireless",
+      "name": "Fone de Ouvido Wireless",
+      "description": "Fone de ouvido bluetooth com cancelamento de ruído ativo, bateria de até 30 horas e qualidade de som premium. Perfeito para trabalho e lazer.",
+      "price": 299.99,
+      "originalPrice": 399.99,
+      "image": "/images/products/fone-ouvido-wireless.jpg",
+      "gallery": [
+        "/images/products/fone-ouvido-wireless-1.jpg",
+        "/images/products/fone-ouvido-wireless-2.jpg"
+      ],
+      "rating": 4.6,
+      "reviews": 890,
+      "soldCount": 1567,
+      "category": "electronics",
+      "tags": ["fone", "bluetooth", "wireless", "audio"],
+      "specs": {
+        "type": "Over-ear",
+        "connectivity": "Bluetooth 5.0",
+        "battery": "30 horas",
+        "noise_cancellation": "Ativo",
+        "water_resistance": "IPX4"
+      },
+      "inStock": true,
+      "isFeatured": true
+    },
+    {
+      "id": 3,
+      "slug": "smart-watch-series-8",
+      "name": "Smart Watch Series 8",
+      "description": "Relógio inteligente com monitoramento de saúde avançado, GPS integrado e design elegante. Acompanhe sua atividade física e receba notificações importantes.",
+      "price": 1299.99,
+      "originalPrice": 1599.99,
+      "image": "/images/products/smart-watch-series-8.jpg",
+      "gallery": [
+        "/images/products/smart-watch-series-8-1.jpg",
+        "/images/products/smart-watch-series-8-2.jpg"
+      ],
+      "rating": 4.9,
+      "reviews": 567,
+      "soldCount": 890,
+      "category": "electronics",
+      "tags": ["smartwatch", "fitness", "health", "gps"],
+      "specs": {
+        "screen": "1.9\" AMOLED",
+        "battery": "2 dias",
+        "water_resistance": "5ATM",
+        "gps": "Integrado",
+        "sensors": "Cardíaco, Oxímetro, Acelerômetro"
+      },
+      "inStock": true,
+      "isFeatured": true
+    },
+    {
+      "id": 4,
+      "slug": "camera-dslr-canon",
+      "name": "Câmera DSLR Canon EOS R",
+      "description": "Câmera profissional mirrorless com sensor full-frame de 30MP, autofoco rápido e gravação 4K. Ideal para fotógrafos profissionais e entusiastas.",
+      "price": 2499.99,
+      "originalPrice": 2999.99,
+      "image": "/images/products/camera-dslr-canon.jpg",
+      "gallery": [
+        "/images/products/camera-dslr-canon-1.jpg",
+        "/images/products/camera-dslr-canon-2.jpg"
+      ],
+      "rating": 4.7,
+      "reviews": 234,
+      "soldCount": 156,
+      "category": "electronics",
+      "tags": ["camera", "dslr", "canon", "professional"],
+      "specs": {
+        "sensor": "30.3MP Full-Frame",
+        "video": "4K 30fps",
+        "autofocus": "Dual Pixel CMOS AF",
+        "iso": "100-40000",
+        "connectivity": "Wi-Fi, Bluetooth"
+      },
+      "inStock": true,
+      "isFeatured": false
+    },
+    {
+      "id": 5,
+      "slug": "tenis-nike-air-max",
+      "name": "Tênis Nike Air Max 270",
+      "description": "Tênis esportivo com tecnologia Air Max para máximo conforto e amortecimento. Design moderno e versátil para uso diário e esportes.",
+      "price": 399.99,
+      "originalPrice": 499.99,
+      "image": "/images/products/tenis-nike-air-max.jpg",
+      "gallery": [
+        "/images/products/tenis-nike-air-max-1.jpg",
+        "/images/products/tenis-nike-air-max-2.jpg"
+      ],
+      "rating": 4.5,
+      "reviews": 1200,
+      "soldCount": 3200,
+      "category": "sports",
+      "tags": ["tenis", "nike", "esporte", "conforto"],
+      "specs": {
+        "material": "Mesh respirável",
+        "solado": "Borracha",
+        "tecnologia": "Air Max 270",
+        "peso": "320g",
+        "indicado": "Corrida, Caminhada"
+      },
+      "inStock": true,
+      "isFeatured": false
+    },
+    {
+      "id": 6,
+      "slug": "camiseta-basica",
+      "name": "Camiseta Básica Premium",
+      "description": "Camiseta 100% algodão orgânico com corte moderno e confortável. Disponível em várias cores e tamanhos. Perfeita para uso diário.",
+      "price": 49.99,
+      "originalPrice": 79.99,
+      "image": "/images/products/camiseta-basica.jpg",
+      "gallery": [
+        "/images/products/camiseta-basica-1.jpg",
+        "/images/products/camiseta-basica-2.jpg"
+      ],
+      "rating": 4.3,
+      "reviews": 2500,
+      "soldCount": 8500,
+      "category": "clothing",
+      "tags": ["camiseta", "basica", "algodao", "casual"],
+      "specs": {
+        "material": "100% Algodão Orgânico",
+        "gramatura": "180g/m²",
+        "cores": "Branco, Preto, Azul, Cinza",
+        "tamanhos": "P, M, G, GG",
+        "cuidados": "Lavar a 30°C"
+      },
+      "inStock": true,
+      "isFeatured": false
+    }
+  ]
+}
