@@ -1,0 +1,323 @@
+{
+  "common": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "contact": "Contact",
+    "cart": "Cart",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "search": "Search",
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "add": "Add",
+    "remove": "Remove",
+    "view": "View",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "continue": "Continue",
+    "finish": "Finish",
+    "confirm": "Confirm",
+    "yes": "Yes",
+    "no": "No",
+    "ok": "OK",
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning",
+    "info": "Information"
+  },
+  "navigation": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "contact": "Contact",
+    "myAccount": "My Account",
+    "dashboard": "Dashboard",
+    "orders": "Orders",
+    "profile": "Profile",
+    "settings": "Settings"
+  },
+  "home": {
+    "hero": {
+      "title": "Your Trusted Online Store",
+      "subtitle": "Discover amazing products with the best prices and fast delivery. Thousands of products waiting for you!",
+      "viewProducts": "View Products",
+      "specialOffers": "Special Offers"
+    },
+    "categories": {
+      "title": "Featured Categories",
+      "electronics": "Electronics",
+      "clothing": "Clothing",
+      "home": "Home",
+      "sports": "Sports",
+      "products": "products"
+    },
+    "featured": {
+      "title": "Featured Products",
+      "viewAll": "View all"
+    },
+    "offers": {
+      "title": "Special Offers",
+      "subtitle": "Take advantage of the best prices with free shipping!",
+      "takeAdvantage": "Take Advantage"
+    },
+    "benefits": {
+      "freeShipping": {
+        "title": "Free Shipping",
+        "description": "On orders above $100"
+      },
+      "securePurchase": {
+        "title": "Secure Purchase",
+        "description": "Secure payment and warranty"
+      },
+      "fastDelivery": {
+        "title": "Fast Delivery",
+        "description": "Receive within 48h"
+      }
+    }
+  },
+  "products": {
+    "title": "Products",
+    "subtitle": "Find the best products with the most competitive prices",
+    "filters": {
+      "title": "Filters",
+      "categories": "Categories",
+      "price": "Price",
+      "rating": "Rating",
+      "clearFilters": "Clear Filters",
+      "priceRanges": {
+        "upTo50": "Up to $50",
+        "50to100": "$50 - $100",
+        "100to200": "$100 - $200",
+        "above200": "Above $200"
+      }
+    },
+    "sort": {
+      "label": "Sort by:",
+      "relevance": "Most relevant",
+      "priceLow": "Lowest price",
+      "priceHigh": "Highest price",
+      "rating": "Best rated",
+      "sold": "Most sold"
+    },
+    "results": "products found",
+    "noResults": {
+      "title": "No products found",
+      "description": "Try adjusting the filters or search for another term"
+    },
+    "addToCart": "Add to Cart",
+    "buyNow": "Buy Now",
+    "sold": "sold",
+    "stars": "stars"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "items": "Cart Items",
+    "empty": {
+      "title": "Your cart is empty",
+      "description": "Add some products to start shopping",
+      "viewProducts": "View Products"
+    },
+    "summary": {
+      "title": "Order Summary",
+      "subtotal": "Subtotal:",
+      "shipping": "Shipping:",
+      "total": "Total:",
+      "freeShipping": "Free shipping on orders above $100",
+      "securePurchase": "100% secure purchase",
+      "secureDescription": "Your data is protected"
+    },
+    "actions": {
+      "checkout": "Checkout",
+      "continueShopping": "Continue Shopping"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Sign in to your account",
+      "subtitle": "Or",
+      "createAccount": "create a new account",
+      "email": "Email",
+      "password": "Password",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot your password?",
+      "loginButton": "Sign In",
+      "loggingIn": "Signing in...",
+      "orContinueWith": "Or continue with"
+    },
+    "register": {
+      "title": "Create account",
+      "subtitle": "Or",
+      "loginAccount": "sign in to your account",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "acceptTerms": "I accept the",
+      "termsOfUse": "terms of use",
+      "and": "and the",
+      "privacyPolicy": "privacy policy",
+      "registerButton": "Create Account",
+      "creatingAccount": "Creating account..."
+    },
+    "validation": {
+      "required": "Required field",
+      "invalidEmail": "Invalid email",
+      "invalidPhone": "Invalid phone",
+      "passwordMinLength": "Password must be at least 8 characters",
+      "passwordsDontMatch": "Passwords don't match",
+      "acceptTerms": "You must accept the terms"
+    }
+  },
+  "checkout": {
+    "title": "Checkout",
+    "shipping": {
+      "title": "Shipping Information",
+      "cep": "ZIP Code",
+      "address": "Address",
+      "complement": "Complement",
+      "neighborhood": "Neighborhood",
+      "city": "City",
+      "state": "State"
+    },
+    "payment": {
+      "title": "Payment Information",
+      "cardNumber": "Card Number",
+      "month": "Month",
+      "year": "Year",
+      "cvv": "CVV",
+      "cardName": "Name on Card"
+    },
+    "summary": {
+      "title": "Order Summary",
+      "quantity": "Qty",
+      "processing": "Processing...",
+      "securePayment": "100% secure payment",
+      "secureDescription": "Your data is protected"
+    }
+  },
+  "success": {
+    "title": "Purchase completed successfully!",
+    "subtitle": "Thank you for choosing Henrique Store",
+    "orderDetails": "Order Details",
+    "orderNumber": "Order Number:",
+    "date": "Date:",
+    "total": "Total:",
+    "status": "Status:",
+    "processing": "Processing",
+    "emailInfo": "You will receive an email with order details and tracking information.",
+    "continueShopping": "Continue Shopping",
+    "viewOrders": "View My Orders"
+  },
+  "about": {
+    "title": "About Henrique Store",
+    "subtitle": "Your trusted online store since 2024",
+    "history": {
+      "title": "Our History",
+      "description": "Henrique Store was born from the passion for offering quality products at affordable prices. We started as a small local store and today we are one of the main references in e-commerce.",
+      "mission": "Our mission is to connect you to the best products, with the best shopping experience possible."
+    },
+    "values": {
+      "title": "Our Values",
+      "excellence": {
+        "title": "Excellence",
+        "description": "We always seek excellence in everything we do, from customer service to delivery."
+      },
+      "customerFirst": {
+        "title": "Customer First",
+        "description": "Our customers are our priority. Your satisfaction is our goal."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "We are always looking for new ways to improve your shopping experience."
+      },
+      "transparency": {
+        "title": "Transparency",
+        "description": "We act with transparency in all our relationships and negotiations."
+      }
+    },
+    "features": {
+      "quality": {
+        "title": "Quality",
+        "description": "We carefully select each product to ensure the best quality."
+      },
+      "fastDelivery": {
+        "title": "Fast Delivery",
+        "description": "We deliver throughout Brazil with speed and security."
+      },
+      "security": {
+        "title": "Security",
+        "description": "Your information is protected with the highest security."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We are here to help you",
+    "info": {
+      "title": "Contact Information",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "hours": "Business Hours"
+    },
+    "form": {
+      "title": "Send a Message",
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "subjects": {
+        "product": "Product question",
+        "order": "Order status",
+        "return": "Returns and exchanges",
+        "suggestion": "Suggestion",
+        "complaint": "Complaint",
+        "other": "Other"
+      },
+      "sendMessage": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully! We will contact you soon."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "tracking": {
+        "question": "How do I track my order?",
+        "answer": "You will receive an email with the tracking code as soon as the order is shipped. You can also track it in your account."
+      },
+      "delivery": {
+        "question": "What is the delivery time?",
+        "answer": "The deadline varies from 2 to 7 business days, depending on your location and the type of shipping chosen."
+      },
+      "returns": {
+        "question": "How do exchanges/returns work?",
+        "answer": "You have 7 days to request an exchange or return. Contact us to start the process."
+      },
+      "payment": {
+        "question": "What payment methods do you accept?",
+        "answer": "We accept credit cards, debit cards, PIX, bank slip and transfer."
+      }
+    }
+  },
+  "footer": {
+    "description": "Your trusted online store for quality products. We offer a wide variety of products with fast and secure delivery.",
+    "quickLinks": "Quick Links",
+    "support": "Support",
+    "helpCenter": "Help Center",
+    "returns": "Returns and Exchanges",
+    "shipping": "Shipping Information",
+    "privacy": "Privacy Policy",
+    "copyright": "© 2024 Henrique Store. All rights reserved.",
+    "terms": "Terms of Use",
+    "cookies": "Cookies"
+  }
+}
