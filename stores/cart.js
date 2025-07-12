@@ -8,18 +8,18 @@ export const useCartStore = defineStore('cart', {
 
   getters: {
     totalItems: (state) => {
-      return state.items.reduce((total, item) => total + item.quantidade, 0);
+      return state.items.reduce((total, item) => total + item.quantity, 0);
     },
 
     totalPrice: (state) => {
       return state.items.reduce((total, item) => {
-        return total + item.preco * item.quantidade;
+        return total + item.price * item.quantity;
       }, 0);
     },
 
     formattedTotalPrice: (state) => {
       const total = state.items.reduce((total, item) => {
-        return total + item.preco * item.quantidade;
+        return total + item.price * item.quantity;
       }, 0);
       return `R$ ${total.toFixed(2).replace('.', ',')}`;
     },
@@ -34,14 +34,14 @@ export const useCartStore = defineStore('cart', {
       const existingItem = this.items.find((item) => item.id === produto.id);
 
       if (existingItem) {
-        existingItem.quantidade += quantidade;
+        existingItem.quantity += quantidade;
       } else {
         this.items.push({
           id: produto.id,
-          nome: produto.nome,
-          preco: produto.preco,
-          imagem: produto.imagem,
-          quantidade: quantidade,
+          name: produto.name,
+          price: produto.price,
+          image: produto.image,
+          quantity: quantidade,
         });
       }
 
@@ -63,7 +63,7 @@ export const useCartStore = defineStore('cart', {
         if (quantidade <= 0) {
           this.removeItem(produtoId);
         } else {
-          item.quantidade = quantidade;
+          item.quantity = quantidade;
           this.saveToLocalStorage();
         }
       }

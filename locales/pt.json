@@ -1,72 +1,50 @@
 {
   "common": {
-    "home": "Home",
+    "home": "Início",
     "products": "Produtos",
-    "about": "Sobre",
-    "contact": "Contato",
     "cart": "Carrinho",
-    "login": "Entrar",
-    "register": "Cadastrar",
-    "logout": "Sair",
+    "account": "Conta",
     "search": "Buscar",
+    "backToHome": "Voltar ao Início",
     "loading": "Carregando...",
-    "save": "Salvar",
+    "error": "Erro",
+    "success": "Sucesso",
     "cancel": "Cancelar",
+    "save": "Salvar",
     "edit": "Editar",
     "delete": "Excluir",
-    "add": "Adicionar",
-    "remove": "Remover",
-    "view": "Ver",
+    "view": "Visualizar",
     "close": "Fechar",
-    "back": "Voltar",
     "next": "Próximo",
     "previous": "Anterior",
     "submit": "Enviar",
-    "continue": "Continuar",
-    "finish": "Finalizar",
     "confirm": "Confirmar",
-    "yes": "Sim",
-    "no": "Não",
-    "ok": "OK",
-    "error": "Erro",
-    "success": "Sucesso",
-    "warning": "Aviso",
-    "info": "Informação"
+    "back": "Voltar"
   },
   "navigation": {
-    "home": "Home",
+    "menu": "Menu",
+    "searchPlaceholder": "Buscar produtos...",
+    "account": "Minha Conta",
+    "orders": "Meus Pedidos",
+    "favorites": "Favoritos",
+    "settings": "Configurações",
+    "logout": "Sair",
+    "home": "Início",
     "products": "Produtos",
     "about": "Sobre",
-    "contact": "Contato",
-    "myAccount": "Minha Conta",
-    "dashboard": "Dashboard",
-    "orders": "Pedidos",
-    "profile": "Perfil",
-    "settings": "Configurações"
+    "contact": "Contato"
   },
   "home": {
     "hero": {
-      "title": "Sua Loja Online de Confiança",
-      "subtitle": "Descubra produtos incríveis com os melhores preços e entrega rápida. Milhares de produtos esperando por você!",
+      "title": "Bem-vindo à Henrique Store",
+      "subtitle": "Descubra produtos incríveis com os melhores preços e qualidade garantida",
       "viewProducts": "Ver Produtos",
       "specialOffers": "Ofertas Especiais"
     },
-    "categories": {
-      "title": "Categorias em Destaque",
-      "electronics": "Eletrônicos",
-      "clothing": "Roupas",
-      "home": "Casa",
-      "sports": "Esportes",
-      "products": "produtos"
-    },
     "featured": {
       "title": "Produtos em Destaque",
-      "viewAll": "Ver todos"
-    },
-    "offers": {
-      "title": "Ofertas Especiais",
-      "subtitle": "Aproveite os melhores preços com frete grátis!",
-      "takeAdvantage": "Aproveitar"
+      "subtitle": "Os produtos mais populares e bem avaliados pelos nossos clientes",
+      "viewAll": "Ver Todos os Produtos"
     },
     "benefits": {
       "freeShipping": {
@@ -75,249 +53,168 @@
       },
       "securePurchase": {
         "title": "Compra Segura",
-        "description": "Pagamento seguro e garantia"
+        "description": "Pagamento 100% seguro"
       },
       "fastDelivery": {
         "title": "Entrega Rápida",
-        "description": "Receba em até 48h"
+        "description": "Entrega em até 48h"
       }
     }
   },
   "products": {
-    "title": "Produtos",
-    "subtitle": "Encontre os melhores produtos com os preços mais competitivos",
-    "filters": {
-      "title": "Filtros",
-      "categories": "Categorias",
-      "price": "Preço",
-      "rating": "Avaliação",
-      "clearFilters": "Limpar Filtros",
-      "priceRanges": {
-        "upTo50": "Até R$ 50",
-        "50to100": "R$ 50 - R$ 100",
-        "100to200": "R$ 100 - R$ 200",
-        "above200": "Acima de R$ 200"
-      }
-    },
-    "sort": {
-      "label": "Ordenar por:",
-      "relevance": "Mais relevantes",
-      "priceLow": "Menor preço",
-      "priceHigh": "Maior preço",
-      "rating": "Melhor avaliados",
-      "sold": "Mais vendidos"
-    },
-    "results": "produtos encontrados",
-    "noResults": {
-      "title": "Nenhum produto encontrado",
-      "description": "Tente ajustar os filtros ou buscar por outro termo"
-    },
+    "viewDetails": "Ver Detalhes",
     "addToCart": "Adicionar ao Carrinho",
     "buyNow": "Comprar Agora",
+    "inStock": "Em Estoque",
+    "outOfStock": "Fora de Estoque",
+    "description": "Descrição",
+    "specifications": "Especificações",
+    "reviews": "avaliações",
     "sold": "vendidos",
-    "stars": "estrelas"
+    "save": "Economize",
+    "notFound": "Produto não encontrado"
   },
   "cart": {
     "title": "Carrinho de Compras",
-    "items": "Itens no Carrinho",
+    "subtitle": "Revise seus itens antes de finalizar a compra",
+    "items": "Itens",
     "empty": {
       "title": "Seu carrinho está vazio",
       "description": "Adicione alguns produtos para começar suas compras",
-      "viewProducts": "Ver Produtos"
+      "startShopping": "Começar a Comprar"
     },
     "summary": {
       "title": "Resumo do Pedido",
-      "subtotal": "Subtotal:",
-      "shipping": "Frete:",
-      "total": "Total:",
-      "freeShipping": "Frete grátis em compras acima de R$ 100",
-      "securePurchase": "Compra 100% segura",
-      "secureDescription": "Seus dados estão protegidos"
-    },
-    "actions": {
+      "subtotal": "Subtotal",
+      "shipping": "Frete",
+      "tax": "Impostos",
+      "total": "Total",
+      "free": "Grátis",
       "checkout": "Finalizar Compra",
-      "continueShopping": "Continuar Comprando"
-    }
-  },
-  "auth": {
-    "login": {
-      "title": "Entrar na sua conta",
-      "subtitle": "Ou",
-      "createAccount": "criar uma nova conta",
-      "email": "Email",
-      "password": "Senha",
-      "rememberMe": "Lembrar de mim",
-      "forgotPassword": "Esqueceu sua senha?",
-      "loginButton": "Entrar",
-      "loggingIn": "Entrando...",
-      "orContinueWith": "Ou continue com"
-    },
-    "register": {
-      "title": "Criar conta",
-      "subtitle": "Ou",
-      "loginAccount": "faça login na sua conta",
-      "firstName": "Nome",
-      "lastName": "Sobrenome",
-      "email": "Email",
-      "phone": "Telefone",
-      "password": "Senha",
-      "confirmPassword": "Confirmar Senha",
-      "acceptTerms": "Eu aceito os",
-      "termsOfUse": "termos de uso",
-      "and": "e a",
-      "privacyPolicy": "política de privacidade",
-      "registerButton": "Criar Conta",
-      "creatingAccount": "Criando conta..."
-    },
-    "validation": {
-      "required": "Campo obrigatório",
-      "invalidEmail": "Email inválido",
-      "invalidPhone": "Telefone inválido",
-      "passwordMinLength": "Senha deve ter pelo menos 8 caracteres",
-      "passwordsDontMatch": "Senhas não coincidem",
-      "acceptTerms": "Você deve aceitar os termos"
+      "continueShopping": "Continuar Comprando",
+      "secureCheckout": "Checkout Seguro"
     }
   },
   "checkout": {
     "title": "Finalizar Compra",
+    "subtitle": "Complete suas informações para finalizar o pedido",
+    "empty": {
+      "title": "Carrinho vazio",
+      "description": "Adicione produtos ao carrinho antes de finalizar a compra",
+      "startShopping": "Começar a Comprar"
+    },
     "shipping": {
       "title": "Informações de Entrega",
-      "cep": "CEP",
+      "firstName": "Nome",
+      "firstNamePlaceholder": "Seu nome",
+      "lastName": "Sobrenome",
+      "lastNamePlaceholder": "Seu sobrenome",
+      "email": "E-mail",
+      "emailPlaceholder": "seu.email.com",
+      "phone": "Telefone",
+      "phonePlaceholder": "(11) 99999-9999",
       "address": "Endereço",
-      "complement": "Complemento",
-      "neighborhood": "Bairro",
+      "addressPlaceholder": "Rua, número, complemento",
       "city": "Cidade",
-      "state": "Estado"
+      "cityPlaceholder": "Sua cidade",
+      "state": "Estado",
+      "selectState": "Selecione o estado",
+      "zipCode": "CEP",
+      "zipCodePlaceholder": "00000-000"
     },
     "payment": {
       "title": "Informações de Pagamento",
+      "method": "Forma de Pagamento",
+      "creditCard": "Cartão de Crédito",
+      "creditCardDescription": "Pague com cartão de crédito",
+      "pix": "PIX",
+      "pixDescription": "Pague instantaneamente com PIX",
+      "boleto": "Boleto Bancário",
+      "boletoDescription": "Pague com boleto bancário",
       "cardNumber": "Número do Cartão",
-      "month": "Mês",
-      "year": "Ano",
+      "cardNumberPlaceholder": "0000 0000 0000 0000",
+      "expiryDate": "Data de Validade",
+      "expiryDatePlaceholder": "MM/AA",
       "cvv": "CVV",
-      "cardName": "Nome no Cartão"
+      "cvvPlaceholder": "123"
     },
     "summary": {
       "title": "Resumo do Pedido",
-      "quantity": "Qtd",
+      "quantity": "Quantidade",
+      "subtotal": "Subtotal",
+      "shipping": "Frete",
+      "tax": "Impostos",
+      "total": "Total",
+      "free": "Grátis",
+      "placeOrder": "Finalizar Pedido",
       "processing": "Processando...",
-      "securePayment": "Pagamento 100% seguro",
-      "secureDescription": "Seus dados estão protegidos"
+      "secureCheckout": "Checkout Seguro"
     }
   },
+  "auth": {
+    "login": {
+      "title": "Entrar",
+      "subtitle": "Acesse sua conta",
+      "email": "E-mail",
+      "password": "Senha",
+      "forgotPassword": "Esqueceu a senha?",
+      "submit": "Entrar",
+      "noAccount": "Não tem uma conta?",
+      "signup": "Cadastre-se",
+      "createAccount": "Criar uma nova conta",
+      "rememberMe": "Lembrar de mim",
+      "loginButton": "Entrar",
+      "orContinueWith": "Ou continue com"
+    },
+    "register": {
+      "title": "Cadastrar",
+      "subtitle": "Crie sua conta",
+      "name": "Nome",
+      "email": "E-mail",
+      "password": "Senha",
+      "confirmPassword": "Confirmar Senha",
+      "submit": "Cadastrar",
+      "hasAccount": "Já tem uma conta?",
+      "signin": "Entrar"
+    }
+  },
+  "profile": {
+    "title": "Meu Perfil",
+    "personalInfo": "Informações Pessoais",
+    "orders": "Meus Pedidos",
+    "favorites": "Favoritos",
+    "settings": "Configurações",
+    "logout": "Sair"
+  },
   "success": {
-    "title": "Compra realizada com sucesso!",
-    "subtitle": "Obrigado por escolher a Henrique Store",
+    "title": "Pedido realizado com sucesso!",
+    "subtitle": "Obrigado por escolher a Henrique Store. Seu pedido foi confirmado e está sendo processado.",
     "orderDetails": "Detalhes do Pedido",
-    "orderNumber": "Número do Pedido:",
-    "date": "Data:",
-    "total": "Total:",
-    "status": "Status:",
+    "orderNumber": "Número do Pedido",
+    "date": "Data",
+    "status": "Status",
+    "total": "Total",
     "processing": "Processando",
-    "emailInfo": "Você receberá um email com os detalhes do pedido e informações de rastreamento.",
+    "emailSent": "E-mail enviado",
+    "emailInfo": "Você receberá um e-mail com os detalhes do pedido e informações de rastreamento.",
     "continueShopping": "Continuar Comprando",
     "viewOrders": "Ver Meus Pedidos"
   },
-  "about": {
-    "title": "Sobre a Henrique Store",
-    "subtitle": "Sua loja online de confiança desde 2024",
-    "history": {
-      "title": "Nossa História",
-      "description": "A Henrique Store nasceu da paixão por oferecer produtos de qualidade a preços acessíveis. Começamos como uma pequena loja local e hoje somos uma das principais referências em e-commerce.",
-      "mission": "Nossa missão é conectar você aos melhores produtos, com a melhor experiência de compra possível."
-    },
-    "values": {
-      "title": "Nossos Valores",
-      "excellence": {
-        "title": "Excelência",
-        "description": "Buscamos sempre a excelência em tudo que fazemos, desde o atendimento até a entrega."
-      },
-      "customerFirst": {
-        "title": "Cliente em Primeiro Lugar",
-        "description": "Nossos clientes são nossa prioridade. Sua satisfação é nosso objetivo."
-      },
-      "innovation": {
-        "title": "Inovação",
-        "description": "Estamos sempre buscando novas formas de melhorar sua experiência de compra."
-      },
-      "transparency": {
-        "title": "Transparência",
-        "description": "Agimos com transparência em todas as nossas relações e negociações."
-      }
-    },
-    "features": {
-      "quality": {
-        "title": "Qualidade",
-        "description": "Selecionamos cuidadosamente cada produto para garantir a melhor qualidade."
-      },
-      "fastDelivery": {
-        "title": "Entrega Rápida",
-        "description": "Entregamos em todo o Brasil com rapidez e segurança."
-      },
-      "security": {
-        "title": "Segurança",
-        "description": "Suas informações estão protegidas com a mais alta segurança."
-      }
-    }
-  },
-  "contact": {
-    "title": "Entre em Contato",
-    "subtitle": "Estamos aqui para ajudar você",
-    "info": {
-      "title": "Informações de Contato",
-      "email": "Email",
-      "phone": "Telefone",
-      "address": "Endereço",
-      "hours": "Horário de Atendimento"
-    },
-    "form": {
-      "title": "Envie uma Mensagem",
-      "name": "Nome",
-      "email": "Email",
-      "subject": "Assunto",
-      "message": "Mensagem",
-      "subjects": {
-        "product": "Dúvida sobre produto",
-        "order": "Status do pedido",
-        "return": "Trocas e devoluções",
-        "suggestion": "Sugestão",
-        "complaint": "Reclamação",
-        "other": "Outro"
-      },
-      "sendMessage": "Enviar Mensagem",
-      "sending": "Enviando...",
-      "success": "Mensagem enviada com sucesso! Entraremos em contato em breve."
-    },
-    "faq": {
-      "title": "Perguntas Frequentes",
-      "tracking": {
-        "question": "Como faço para rastrear meu pedido?",
-        "answer": "Você receberá um email com o código de rastreamento assim que o pedido for enviado. Também pode acompanhar na sua conta."
-      },
-      "delivery": {
-        "question": "Qual o prazo de entrega?",
-        "answer": "O prazo varia de 2 a 7 dias úteis, dependendo da sua localização e do tipo de frete escolhido."
-      },
-      "returns": {
-        "question": "Como funciona a troca/devolução?",
-        "answer": "Você tem 7 dias para solicitar a troca ou devolução. Entre em contato conosco para iniciar o processo."
-      },
-      "payment": {
-        "question": "Aceitam quais formas de pagamento?",
-        "answer": "Aceitamos cartões de crédito, débito, PIX, boleto bancário e transferência."
-      }
-    }
-  },
   "footer": {
-    "description": "Sua loja online de confiança para produtos de qualidade. Oferecemos uma ampla variedade de produtos com entrega rápida e segura.",
+    "about": "Sobre",
+    "contact": "Contato",
+    "terms": "Termos de Uso",
+    "privacy": "Política de Privacidade",
+    "newsletter": "Newsletter",
+    "subscribe": "Inscrever-se",
+    "emailPlaceholder": "Seu e-mail",
+    "description": "Sua loja online de confiança para produtos de qualidade.",
     "quickLinks": "Links Rápidos",
     "support": "Suporte",
     "helpCenter": "Central de Ajuda",
     "returns": "Trocas e Devoluções",
     "shipping": "Informações de Frete",
-    "privacy": "Política de Privacidade",
     "copyright": "© 2024 Henrique Store. Todos os direitos reservados.",
-    "terms": "Termos de Uso",
     "cookies": "Cookies"
   }
 }

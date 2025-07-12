@@ -16,6 +16,10 @@ export const useCart = () => {
   };
 
   const clearCart = () => {
+    // Save total before clearing
+    const total = cartStore.totalPrice;
+    localStorage.setItem('lastOrderTotal', total.toString());
+
     cartStore.clearCart();
   };
 
@@ -53,6 +57,7 @@ export const useCart = () => {
 
   return {
     // State
+    cartItems: computed(() => cartStore.items),
     items: computed(() => cartStore.items),
     totalItems: computed(() => cartStore.totalItems),
     totalPrice: computed(() => cartStore.totalPrice),

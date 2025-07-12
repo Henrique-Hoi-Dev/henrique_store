@@ -2,26 +2,46 @@
   <div>
     <!-- Hero Section -->
     <section
-      class="bg-gradient-to-r from-primary-600 to-primary-700 text-white"
+      class="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white overflow-hidden"
     >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div class="absolute inset-0 bg-black/10"></div>
+      <div
+        class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32"
+      >
         <div class="text-center">
-          <h1 class="text-4xl md:text-6xl font-bold mb-6">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
             {{ $t('home.hero.title') }}
           </h1>
-          <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
+          <p
+            class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90 animate-fade-in-delay"
+          >
             {{ $t('home.hero.subtitle') }}
           </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-2"
+          >
             <NuxtLink
               to="/produtos"
-              class="bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+              class="group bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               {{ $t('home.hero.viewProducts') }}
+              <svg
+                class="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
             </NuxtLink>
             <NuxtLink
               to="/ofertas"
-              class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary-600 transition-colors"
+              class="group border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary-600 transition-all duration-300 transform hover:scale-105"
             >
               {{ $t('home.hero.specialOffers') }}
             </NuxtLink>
@@ -30,171 +50,73 @@
       </div>
     </section>
 
-    <!-- Categories Section -->
-    <section class="py-16 bg-gray-50 dark:bg-gray-800">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2
-          class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white"
-        >
-          {{ $t('home.categories.title') }}
-        </h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div
-            class="bg-white dark:bg-gray-700 rounded-lg p-6 text-center hover:shadow-lg transition-shadow"
-          >
-            <div
-              class="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4"
-            >
-              <svg
-                class="w-8 h-8 text-primary-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
-            </div>
-            <h3 class="font-semibold text-gray-900 dark:text-white">
-              {{ $t('home.categories.electronics') }}
-            </h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
-              100+ {{ $t('home.categories.products') }}
-            </p>
-          </div>
-
-          <div
-            class="bg-white dark:bg-gray-700 rounded-lg p-6 text-center hover:shadow-lg transition-shadow"
-          >
-            <div
-              class="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4"
-            >
-              <svg
-                class="w-8 h-8 text-primary-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-                />
-              </svg>
-            </div>
-            <h3 class="font-semibold text-gray-900 dark:text-white">
-              {{ $t('home.categories.clothing') }}
-            </h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
-              200+ {{ $t('home.categories.products') }}
-            </p>
-          </div>
-
-          <div
-            class="bg-white dark:bg-gray-700 rounded-lg p-6 text-center hover:shadow-lg transition-shadow"
-          >
-            <div
-              class="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4"
-            >
-              <svg
-                class="w-8 h-8 text-primary-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"
-                />
-              </svg>
-            </div>
-            <h3 class="font-semibold text-gray-900 dark:text-white">
-              {{ $t('home.categories.home') }}
-            </h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
-              150+ {{ $t('home.categories.products') }}
-            </p>
-          </div>
-
-          <div
-            class="bg-white dark:bg-gray-700 rounded-lg p-6 text-center hover:shadow-lg transition-shadow"
-          >
-            <div
-              class="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4"
-            >
-              <svg
-                class="w-8 h-8 text-primary-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M13 10V3L4 14h7v7l9-11h-7z"
-                />
-              </svg>
-            </div>
-            <h3 class="font-semibold text-gray-900 dark:text-white">
-              {{ $t('home.categories.sports') }}
-            </h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
-              80+ {{ $t('home.categories.products') }}
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Featured Products -->
-    <section class="py-16">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center mb-8">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
-            {{ $t('home.featured.title') }}
-          </h2>
-          <NuxtLink
-            to="/produtos"
-            class="text-primary-600 hover:text-primary-700 font-semibold"
-          >
-            {{ $t('home.featured.viewAll') }}
-          </NuxtLink>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <CardProduto
-            v-for="product in featuredProducts"
-            :key="product.id"
-            :product="product"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- Special Offers -->
-    <section class="py-16 bg-primary-50 dark:bg-primary-900/20">
+    <section class="py-16 bg-gray-50 dark:bg-gray-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-            {{ $t('home.offers.title') }}
+          <h2
+            class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4"
+          >
+            {{ $t('home.featured.title') }}
           </h2>
-          <p class="text-lg text-gray-600 dark:text-gray-400">
-            {{ $t('home.offers.subtitle') }}
+          <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            {{ $t('home.featured.subtitle') }}
           </p>
         </div>
 
+        <div v-if="loading" class="flex justify-center py-12">
+          <div
+            class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"
+          ></div>
+        </div>
+
+        <div v-else-if="error" class="text-center py-12">
+          <p class="text-red-600">{{ error }}</p>
+        </div>
+
+        <div
+          v-else
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <ProductCard
+            v-for="product in featuredProducts"
+            :key="product.id"
+            :product="product"
+            class="animate-fade-in-up"
+          />
+        </div>
+
+        <div class="text-center mt-12">
+          <NuxtLink
+            to="/produtos"
+            class="inline-flex items-center bg-primary-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+          >
+            {{ $t('home.featured.viewAll') }}
+            <svg
+              class="ml-2 w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 bg-white dark:bg-gray-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center">
+          <div class="text-center group">
             <div
-              class="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4"
+              class="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
             >
               <svg
                 class="w-8 h-8 text-primary-600"
@@ -210,7 +132,9 @@
                 />
               </svg>
             </div>
-            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">
+            <h3
+              class="text-xl font-semibold text-gray-900 dark:text-white mb-2"
+            >
               {{ $t('home.benefits.freeShipping.title') }}
             </h3>
             <p class="text-gray-600 dark:text-gray-400">
@@ -218,9 +142,9 @@
             </p>
           </div>
 
-          <div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center">
+          <div class="text-center group">
             <div
-              class="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4"
+              class="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
             >
               <svg
                 class="w-8 h-8 text-primary-600"
@@ -236,7 +160,9 @@
                 />
               </svg>
             </div>
-            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">
+            <h3
+              class="text-xl font-semibold text-gray-900 dark:text-white mb-2"
+            >
               {{ $t('home.benefits.securePurchase.title') }}
             </h3>
             <p class="text-gray-600 dark:text-gray-400">
@@ -244,9 +170,9 @@
             </p>
           </div>
 
-          <div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center">
+          <div class="text-center group">
             <div
-              class="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4"
+              class="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
             >
               <svg
                 class="w-8 h-8 text-primary-600"
@@ -262,7 +188,9 @@
                 />
               </svg>
             </div>
-            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">
+            <h3
+              class="text-xl font-semibold text-gray-900 dark:text-white mb-2"
+            >
               {{ $t('home.benefits.fastDelivery.title') }}
             </h3>
             <p class="text-gray-600 dark:text-gray-400">
@@ -270,67 +198,64 @@
             </p>
           </div>
         </div>
-
-        <div class="text-center mt-8">
-          <NuxtLink
-            to="/produtos"
-            class="inline-block bg-primary-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
-          >
-            {{ $t('home.offers.takeAdvantage') }}
-          </NuxtLink>
-        </div>
       </div>
     </section>
   </div>
 </template>
 
 <script setup>
-// Mock data for featured products
-const featuredProducts = ref([
-  {
-    id: 1,
-    name: 'Smartphone Galaxy S23',
-    price: 2999.99,
-    originalPrice: 3499.99,
-    image: '/images/product1.jpg',
-    rating: 4.8,
-    soldCount: 1250,
-    isFavorite: false,
-  },
-  {
-    id: 2,
-    name: 'Fone de Ouvido Wireless',
-    price: 299.99,
-    originalPrice: 399.99,
-    image: '/images/product2.jpg',
-    rating: 4.6,
-    soldCount: 890,
-    isFavorite: true,
-  },
-  {
-    id: 3,
-    name: 'Smart Watch Series 8',
-    price: 1299.99,
-    originalPrice: 1599.99,
-    image: '/images/product3.jpg',
-    rating: 4.9,
-    soldCount: 567,
-    isFavorite: false,
-  },
-  {
-    id: 4,
-    name: 'Câmera DSLR Canon',
-    price: 2499.99,
-    originalPrice: 2999.99,
-    image: '/images/product4.jpg',
-    rating: 4.7,
-    soldCount: 234,
-    isFavorite: false,
-  },
-]);
+const { $t } = useNuxtApp();
+const { fetchProducts, getFeaturedProducts, loading, error } = useProducts();
+
+const featuredProducts = computed(() => getFeaturedProducts());
+
+// Fetch products on page load
+onMounted(() => {
+  fetchProducts();
+});
 
 // Set page title
 useHead({
   title: 'Henrique Store - Sua Loja Online de Confiança',
 });
 </script>
+
+<style scoped>
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.animate-fade-in-delay {
+  animation: fadeIn 0.8s ease-out 0.2s both;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fadeIn 0.8s ease-out 0.4s both;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
