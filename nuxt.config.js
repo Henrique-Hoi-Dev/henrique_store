@@ -1,5 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: false,
+  target: 'static',
   devtools: { enabled: true },
 
   modules: [
@@ -43,6 +45,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   app: {
+    baseURL: '/henrique_store/',
     head: {
       title: 'Henrique Store - E-commerce',
       meta: [
