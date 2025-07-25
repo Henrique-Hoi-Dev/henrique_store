@@ -62,6 +62,8 @@
     }
   },
   "products": {
+    "title": "Produtos",
+    "subtitle": "Descubra nossa coleção completa de produtos",
     "viewDetails": "Ver Detalhes",
     "addToCart": "Adicionar ao Carrinho",
     "buyNow": "Comprar Agora",
@@ -72,7 +74,28 @@
     "reviews": "avaliações",
     "sold": "vendidos",
     "save": "Economize",
-    "notFound": "Produto não encontrado"
+    "notFound": "Produto não encontrado",
+    "stars": "estrelas",
+    "filters": {
+      "title": "Filtros",
+      "categories": "Categorias",
+      "price": "Preço",
+      "rating": "Avaliação",
+      "clearFilters": "Limpar Filtros"
+    },
+    "results": "resultados",
+    "sort": {
+      "label": "Ordenar por",
+      "relevance": "Relevância",
+      "priceLow": "Menor Preço",
+      "priceHigh": "Maior Preço",
+      "rating": "Avaliação",
+      "sold": "Mais Vendidos"
+    },
+    "noResults": {
+      "title": "Nenhum produto encontrado",
+      "description": "Tente ajustar os filtros ou buscar por outro termo"
+    }
   },
   "cart": {
     "title": "Carrinho de Compras",
@@ -164,6 +187,7 @@
       "createAccount": "Criar uma nova conta",
       "rememberMe": "Lembrar de mim",
       "loginButton": "Entrar",
+      "loggingIn": "Entrando...",
       "orContinueWith": "Ou continue com"
     },
     "register": {
@@ -176,6 +200,11 @@
       "submit": "Cadastrar",
       "hasAccount": "Já tem uma conta?",
       "signin": "Entrar"
+    },
+    "validation": {
+      "required": "Este campo é obrigatório",
+      "invalidEmail": "E-mail inválido",
+      "passwordMinLength": "A senha deve ter pelo menos 6 caracteres"
     }
   },
   "profile": {

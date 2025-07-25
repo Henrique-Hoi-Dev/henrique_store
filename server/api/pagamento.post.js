@@ -1,10 +1,11 @@
 import mercadopago from 'mercadopago';
 
 export default defineEventHandler(async (event) => {
+  const config = useRuntimeConfig();
   const body = await readBody(event);
 
   mercadopago.configure({
-    access_token: process.env.MERCADO_PAGO_ACCESS_TOKEN,
+    access_token: config.mercadopagoAccessToken,
   });
 
   const items = body.items.map((item) => ({
@@ -25,11 +26,11 @@ export default defineEventHandler(async (event) => {
       },
     },
     back_urls: {
-      success: 'http://localhost:3000/pedido-sucesso',
-      failure: 'http://localhost:3000/checkout?erro=1',
-      pending: 'http://localhost:3000/checkout?pendente=1',
+      success: `${config.public.apiBase}/pedido-sucesso`,
+      failure: `${config.public.apiBase}/checkout?erro=1`,
+      pending: `${config.public.apiBase}/checkout?pendente=1`,
     },
-    notification_url: process.env.MERCADO_PAGO_WEBHOOK_URL,
+    notification_url: config.mercadopagoWebhookUrl,
     auto_return: 'approved',
   };
 
@@ -37,6 +38,7 @@ export default defineEventHandler(async (event) => {
     const response = await mercadopago.preferences.create(preference);
     return { init_point: response.body.init_point };
   } catch (error) {
+    console.error('Erro ao criar preferência do Mercado Pago:', error);
     return { error: error.message };
   }
 });

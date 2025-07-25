@@ -6,10 +6,10 @@
         <h1
           class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2"
         >
-          {{ $t('cart.title') }}
+          {{ t('cart.title') }}
         </h1>
         <p class="text-gray-600 dark:text-gray-400">
-          {{ $t('cart.subtitle') }}
+          {{ t('cart.subtitle') }}
         </p>
       </div>
 
@@ -32,10 +32,10 @@
           </svg>
         </div>
         <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-          {{ $t('cart.empty.title') }}
+          {{ t('cart.empty.title') }}
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-8 max-w-md mx-auto">
-          {{ $t('cart.empty.description') }}
+          {{ t('cart.empty.description') }}
         </p>
         <NuxtLink
           to="/"
@@ -54,7 +54,7 @@
               d="M12 6v6m0 0v6m0-6h6m-6 0H6"
             />
           </svg>
-          {{ $t('cart.empty.startShopping') }}
+          {{ t('cart.empty.startShopping') }}
         </NuxtLink>
       </div>
 
@@ -68,7 +68,7 @@
               <h2
                 class="text-xl font-semibold text-gray-900 dark:text-white mb-6"
               >
-                {{ $t('cart.items') }} ({{ totalItems }})
+                {{ t('cart.items') }} ({{ totalItems }})
               </h2>
 
               <div class="space-y-6">
@@ -186,13 +186,13 @@
             <h2
               class="text-xl font-semibold text-gray-900 dark:text-white mb-6"
             >
-              {{ $t('cart.summary.title') }}
+              {{ t('cart.summary.title') }}
             </h2>
 
             <div class="space-y-4 mb-6">
               <div class="flex justify-between">
                 <span class="text-gray-600 dark:text-gray-400">
-                  {{ $t('cart.summary.subtotal') }}
+                  {{ t('cart.summary.subtotal') }}
                 </span>
                 <span class="font-semibold text-gray-900 dark:text-white">
                   {{ formatPrice(subtotal) }}
@@ -201,16 +201,16 @@
 
               <div class="flex justify-between">
                 <span class="text-gray-600 dark:text-gray-400">
-                  {{ $t('cart.summary.shipping') }}
+                  {{ t('cart.summary.shipping') }}
                 </span>
                 <span class="font-semibold text-green-600">
-                  {{ $t('cart.summary.free') }}
+                  {{ t('cart.summary.free') }}
                 </span>
               </div>
 
               <div class="flex justify-between">
                 <span class="text-gray-600 dark:text-gray-400">
-                  {{ $t('cart.summary.tax') }}
+                  {{ t('cart.summary.tax') }}
                 </span>
                 <span class="font-semibold text-gray-900 dark:text-white">
                   {{ formatPrice(tax) }}
@@ -220,7 +220,7 @@
               <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
                 <div class="flex justify-between">
                   <span class="text-lg font-bold text-gray-900 dark:text-white">
-                    {{ $t('cart.summary.total') }}
+                    {{ t('cart.summary.total') }}
                   </span>
                   <span class="text-2xl font-bold text-primary-600">
                     {{ formatPrice(total) }}
@@ -235,14 +235,14 @@
                 @click="proceedToCheckout"
                 class="w-full bg-primary-600 text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-primary-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                {{ $t('cart.summary.checkout') }}
+                {{ t('cart.summary.checkout') }}
               </button>
 
               <NuxtLink
                 to="/"
                 class="block w-full bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white py-4 px-6 rounded-lg font-semibold text-center hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-300"
               >
-                {{ $t('cart.summary.continueShopping') }}
+                {{ t('cart.summary.continueShopping') }}
               </NuxtLink>
             </div>
 
@@ -265,7 +265,7 @@
                 <span
                   class="text-sm text-green-700 dark:text-green-400 font-medium"
                 >
-                  {{ $t('cart.summary.secureCheckout') }}
+                  {{ t('cart.summary.secureCheckout') }}
                 </span>
               </div>
             </div>
@@ -277,7 +277,9 @@
 </template>
 
 <script setup>
-const { $t } = useNuxtApp();
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 const router = useRouter();
 const { cartItems, removeFromCart, updateQuantity, formatPrice } = useCart();
 

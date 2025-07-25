@@ -1,229 +1,159 @@
-# Henrique Store - E-commerce Nuxt 3
+# Henrique Store - E-commerce
 
-Um projeto de e-commerce completo desenvolvido com Nuxt 3, Tailwind CSS e Pinia para gerenciamento de estado.
+Uma loja online moderna construída com Nuxt 3, oferecendo uma experiência de compra completa e integração com Mercado Pago.
 
-## 🚀 Características
+## 🚀 Deploy Automático
 
-- **Nuxt 3** - Framework Vue.js moderno
-- **Tailwind CSS** - Framework CSS utilitário
-- **Pinia** - Gerenciamento de estado
-- **Dark Mode** - Suporte completo ao modo escuro
-- **Responsivo** - Design adaptável para todos os dispositivos
-- **TypeScript** - Tipagem estática (opcional)
-- **Fonte Inter** - Tipografia moderna e legível
+O projeto está configurado com deploy automático usando GitHub Actions:
+
+- **Vercel**: Deploy automático com preview para PRs
+- **Railway**: Deploy alternativo com mais controle
+- **CI/CD**: Verificações automáticas de qualidade de código
+
+### Status do Deploy
+
+[![Deploy to Vercel](https://img.shields.io/badge/Deploy%20to-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/new/clone?repository-url=https://github.com/seu-usuario/henrique_store)
+[![Deploy to Railway](https://img.shields.io/badge/Deploy%20to-Railway-0B0D0E?style=for-the-badge&logo=railway)](https://railway.app/template/new?template=https://github.com/seu-usuario/henrique_store)
+
+## 📋 Pré-requisitos
+
+- Node.js 18+
+- npm ou yarn
+- Conta no Mercado Pago (para pagamentos)
+
+## 🛠️ Instalação
+
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/henrique_store.git
+cd henrique_store
+
+# Instale as dependências
+npm install
+
+# Configure as variáveis de ambiente
+cp env.example .env
+# Edite o arquivo .env com suas configurações
+
+# Execute em modo desenvolvimento
+npm run dev
+```
+
+## 🔧 Configuração
+
+### Variáveis de Ambiente
+
+Copie o arquivo `env.example` para `.env` e configure:
+
+```bash
+# Configurações obrigatórias
+MERCADO_PAGO_ACCESS_TOKEN=seu_token_aqui
+MERCADO_PAGO_WEBHOOK_URL=https://seu-dominio.com/api/webhook
+API_BASE_URL=https://seu-dominio.com
+
+# Configurações opcionais
+NODE_ENV=development
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=senha_segura
+```
+
+## 🚀 Scripts Disponíveis
+
+```bash
+# Desenvolvimento
+npm run dev          # Servidor de desenvolvimento
+npm run build        # Build para produção
+npm run preview      # Preview do build
+
+# Qualidade de Código
+npm run lint         # Verificação de lint
+npm run lint:fix     # Correção automática de lint
+npm run typecheck    # Verificação de tipos
+
+# Testes
+npm run test         # Executar testes
+npm run test:coverage # Testes com cobertura
+
+# CI/CD
+npm run ci:all       # Executar todas as verificações de CI
+```
 
 ## 📁 Estrutura do Projeto
 
 ```
 henrique_store/
-├── assets/
-│   └── css/
-│       └── main.css          # Estilos globais e Tailwind
-├── components/
-│   ├── Header.vue           # Cabeçalho da loja
-│   ├── Footer.vue           # Rodapé da loja
-│   └── CardProduto.vue      # Card de produto
-├── composables/
-│   ├── useCart.js           # Lógica do carrinho
-│   └── useAuth.js           # Lógica de autenticação
-├── layouts/
-│   ├── default.vue          # Layout padrão da loja
-│   └── admin.vue            # Layout do painel admin
-├── middleware/
-│   └── auth.js              # Middleware de autenticação
-├── pages/
-│   ├── index.vue            # Página inicial
-│   ├── produtos/
-│   │   └── index.vue        # Listagem de produtos
-│   ├── carrinho.vue         # Carrinho de compras
-│   ├── login.vue            # Página de login
-│   └── admin/               # Páginas do admin
-├── public/
-│   └── images/              # Imagens estáticas
-├── stores/
-│   ├── cart.js              # Store do carrinho
-│   ├── user.js              # Store do usuário
-│   └── orders.js            # Store de pedidos
-├── utils/
-│   └── format.js            # Utilitários de formatação
-├── nuxt.config.js           # Configuração do Nuxt
-└── package.json             # Dependências
+├── components/          # Componentes Vue
+├── pages/              # Páginas da aplicação
+├── server/api/         # APIs do servidor
+├── stores/             # Stores Pinia
+├── composables/        # Composables
+├── middleware/         # Middlewares
+├── layouts/            # Layouts da aplicação
+├── assets/             # Assets estáticos
+├── public/             # Arquivos públicos
+└── locales/            # Traduções (i18n)
 ```
 
-## 🛠️ Instalação
+## 🌐 Funcionalidades
 
-1. **Clone o repositório**
+- ✅ Catálogo de produtos
+- ✅ Carrinho de compras
+- ✅ Checkout integrado com Mercado Pago
+- ✅ Painel administrativo
+- ✅ Sistema de autenticação
+- ✅ Internacionalização (i18n)
+- ✅ Modo escuro/claro
+- ✅ Design responsivo
+- ✅ SEO otimizado
 
-   ```bash
-   git clone https://github.com/seu-usuario/henrique-store.git
-   cd henrique-store
-   ```
+## 🔄 CI/CD Pipeline
 
-2. **Instale as dependências**
+O projeto inclui workflows do GitHub Actions para:
 
-   ```bash
-   npm install
-   ```
+### Verificações Automáticas
 
-3. **Execute o servidor de desenvolvimento**
+- ✅ Linting (ESLint)
+- ✅ Type checking
+- ✅ Testes unitários
+- ✅ Build da aplicação
 
-   ```bash
-   npm run dev
-   ```
+### Deploy Automático
 
-4. **Acesse o projeto**
-   ```
-   http://localhost:3000
-   ```
+- Deploy no Vercel/Railway apenas após aprovação dos testes
+- Deploy apenas na branch main/master
+- Rollback automático em caso de falha
 
-## 📦 Scripts Disponíveis
+## 📊 Monitoramento
 
-```bash
-# Desenvolvimento
-npm run dev
+### Health Check
 
-# Build para produção
-npm run build
+- Endpoint: `/api/health`
+- Verifica status da aplicação
+- Monitora uso de memória
+- Valida variáveis de ambiente
 
-# Preview da build
-npm run preview
+### Logs
 
-# Gerar site estático
-npm run generate
-```
+- Vercel: Logs automáticos no painel
+- Railway: Logs em tempo real via CLI
+- GitHub Actions: Logs detalhados dos workflows
 
-## 🎨 Personalização
+## 🔧 Tecnologias
 
-### Cores do Tema
+- **Frontend**: Nuxt 3, Vue 3, Tailwind CSS
+- **Estado**: Pinia
+- **Pagamentos**: Mercado Pago
+- **Deploy**: Vercel, Railway
+- **CI/CD**: GitHub Actions
+- **Testes**: Vitest
+- **Linting**: ESLint
 
-As cores principais podem ser alteradas no arquivo `nuxt.config.js`:
+## 📚 Documentação
 
-```javascript
-tailwindcss: {
-  config: {
-    theme: {
-      extend: {
-        colors: {
-          primary: {
-            50: '#eff6ff',
-            100: '#dbeafe',
-            // ... outras variações
-            900: '#1e3a8a'
-          }
-        }
-      }
-    }
-  }
-}
-```
-
-### Fonte
-
-A fonte Inter está configurada por padrão. Para alterar, modifique o `nuxt.config.js`:
-
-```javascript
-app: {
-  head: {
-    link: [
-      // Altere a URL da fonte aqui
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=SuaFonte:wght@300;400;500;600;700&display=swap',
-      },
-    ];
-  }
-}
-```
-
-## 🔧 Configurações
-
-### Tailwind CSS
-
-O Tailwind está configurado com:
-
-- Fonte Inter
-- Cores primárias customizadas
-- Suporte a dark mode
-- Componentes utilitários
-
-### Pinia Stores
-
-O projeto inclui três stores principais:
-
-1. **Cart Store** - Gerencia o carrinho de compras
-2. **User Store** - Gerencia autenticação e dados do usuário
-3. **Orders Store** - Gerencia pedidos e histórico
-
-### Middleware
-
-O middleware de autenticação protege:
-
-- Rotas `/admin/*` - Requer autenticação e permissão de admin
-- Rota `/checkout` - Requer autenticação
-- Rota `/perfil` - Requer autenticação
-
-## 📱 Páginas Principais
-
-### Loja
-
-- **Home** (`/`) - Página inicial com produtos em destaque
-- **Produtos** (`/produtos`) - Catálogo com filtros
-- **Carrinho** (`/carrinho`) - Carrinho de compras
-- **Login** (`/login`) - Autenticação
-- **Cadastro** (`/cadastro`) - Registro de usuário
-
-### Admin
-
-- **Dashboard** (`/admin/dashboard`) - Painel principal
-- **Produtos** (`/admin/produtos`) - Gerenciamento de produtos
-- **Pedidos** (`/admin/pedidos`) - Gerenciamento de pedidos
-
-## 🎯 Funcionalidades
-
-### Carrinho de Compras
-
-- Adicionar/remover produtos
-- Alterar quantidades
-- Cálculo automático de frete
-- Persistência no localStorage
-
-### Autenticação
-
-- Login/Logout
-- Registro de usuário
-- Validação de formulários
-- Proteção de rotas
-
-### Produtos
-
-- Listagem com filtros
-- Busca por categoria
-- Ordenação por preço/avaliação
-- Paginação
-
-### Dark Mode
-
-- Toggle automático
-- Persistência da preferência
-- Suporte completo em todos os componentes
-
-## 🚀 Deploy
-
-### Vercel (Recomendado)
-
-```bash
-npm run build
-```
-
-### Netlify
-
-```bash
-npm run generate
-```
-
-### Outros
-
-O projeto pode ser deployado em qualquer plataforma que suporte Node.js ou sites estáticos.
+- [Guia de Deploy](DEPLOY.md) - Instruções detalhadas de deploy
+- [Documentação do Nuxt 3](https://nuxt.com/docs)
+- [Documentação do Vercel](https://vercel.com/docs)
+- [Documentação do Railway](https://docs.railway.app)
 
 ## 🤝 Contribuição
 
@@ -235,11 +165,13 @@ O projeto pode ser deployado em qualquer plataforma que suporte Node.js ou sites
 
 ## 📄 Licença
 
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## 📞 Suporte
+## 🆘 Suporte
 
-Se você tiver alguma dúvida ou problema, abra uma issue no GitHub ou entre em contato.
+- **Issues**: [GitHub Issues](https://github.com/seu-usuario/henrique_store/issues)
+- **Documentação**: [DEPLOY.md](DEPLOY.md)
+- **Email**: seu-email@exemplo.com
 
 ---
 

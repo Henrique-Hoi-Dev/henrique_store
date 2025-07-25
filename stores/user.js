@@ -11,7 +11,7 @@ export const useUserStore = defineStore('user', {
   getters: {
     userFullName: (state) => {
       if (!state.user) return '';
-      return `${state.user.nome} ${state.user.sobrenome}`;
+      return `${state.user.firstName || state.user.nome} ${state.user.lastName || state.user.sobrenome}`;
     },
 
     isAdmin: (state) => {
@@ -19,10 +19,10 @@ export const useUserStore = defineStore('user', {
     },
 
     userInitials: (state) => {
-      if (!state.user) return '';
-      return `${state.user.nome.charAt(0)}${state.user.sobrenome.charAt(
-        0
-      )}`.toUpperCase();
+      if (!state.user) return 'U';
+      const firstName = state.user.firstName || state.user.nome || '';
+      const lastName = state.user.lastName || state.user.sobrenome || '';
+      return `${firstName.charAt(0)}${lastName.charAt(0)}`.toUpperCase() || 'U';
     },
   },
 
@@ -37,6 +37,8 @@ export const useUserStore = defineStore('user', {
         const response = {
           user: {
             id: 1,
+            firstName: 'João',
+            lastName: 'Silva',
             nome: 'João',
             sobrenome: 'Silva',
             email: credentials.email,
@@ -81,6 +83,8 @@ export const useUserStore = defineStore('user', {
         const response = {
           user: {
             id: 2,
+            firstName: userData.firstName || userData.nome,
+            lastName: userData.lastName || userData.sobrenome,
             nome: userData.nome,
             sobrenome: userData.sobrenome,
             email: userData.email,

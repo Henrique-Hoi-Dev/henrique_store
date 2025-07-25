@@ -1,24 +1,26 @@
 <template>
-  <footer class="bg-gray-900 text-white">
+  <footer class="bg-white border-t border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <!-- Company Info -->
         <div class="col-span-1 md:col-span-2">
           <div class="flex items-center mb-4">
             <div
-              class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center"
+              class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-md"
             >
               <span class="text-white font-bold text-lg">H</span>
             </div>
-            <span class="ml-2 text-xl font-bold">Henrique Store</span>
+            <span class="ml-3 text-xl font-bold text-gray-800"
+              >Henrique Store</span
+            >
           </div>
-          <p class="text-gray-400 mb-6 max-w-md">
+          <p class="text-gray-600 mb-6 max-w-md">
             {{ $t('footer.description') }}
           </p>
           <div class="flex space-x-4">
             <a
               href="#"
-              class="text-gray-400 hover:text-white transition-colors"
+              class="text-gray-400 hover:text-primary-600 transition-colors p-2 rounded-lg hover:bg-gray-50"
             >
               <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                 <path
@@ -28,7 +30,7 @@
             </a>
             <a
               href="#"
-              class="text-gray-400 hover:text-white transition-colors"
+              class="text-gray-400 hover:text-primary-600 transition-colors p-2 rounded-lg hover:bg-gray-50"
             >
               <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                 <path
@@ -38,7 +40,7 @@
             </a>
             <a
               href="#"
-              class="text-gray-400 hover:text-white transition-colors"
+              class="text-gray-400 hover:text-primary-600 transition-colors p-2 rounded-lg hover:bg-gray-50"
             >
               <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                 <path
@@ -48,7 +50,7 @@
             </a>
             <a
               href="#"
-              class="text-gray-400 hover:text-white transition-colors"
+              class="text-gray-400 hover:text-primary-600 transition-colors p-2 rounded-lg hover:bg-gray-50"
             >
               <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                 <path
@@ -61,14 +63,14 @@
 
         <!-- Quick Links -->
         <div>
-          <h3 class="text-lg font-semibold mb-4">
+          <h3 class="text-lg font-semibold mb-4 text-gray-800">
             {{ $t('footer.quickLinks') }}
           </h3>
           <ul class="space-y-2">
             <li>
               <NuxtLink
                 to="/"
-                class="text-gray-400 hover:text-white transition-colors"
+                class="text-gray-600 hover:text-primary-600 transition-colors"
               >
                 {{ $t('navigation.home') }}
               </NuxtLink>
@@ -76,7 +78,7 @@
             <li>
               <NuxtLink
                 to="/produtos"
-                class="text-gray-400 hover:text-white transition-colors"
+                class="text-gray-600 hover:text-primary-600 transition-colors"
               >
                 {{ $t('navigation.products') }}
               </NuxtLink>
@@ -84,7 +86,7 @@
             <li>
               <NuxtLink
                 to="/sobre"
-                class="text-gray-400 hover:text-white transition-colors"
+                class="text-gray-600 hover:text-primary-600 transition-colors"
               >
                 {{ $t('navigation.about') }}
               </NuxtLink>
@@ -92,7 +94,7 @@
             <li>
               <NuxtLink
                 to="/contato"
-                class="text-gray-400 hover:text-white transition-colors"
+                class="text-gray-600 hover:text-primary-600 transition-colors"
               >
                 {{ $t('navigation.contact') }}
               </NuxtLink>
@@ -102,12 +104,14 @@
 
         <!-- Support -->
         <div>
-          <h3 class="text-lg font-semibold mb-4">{{ $t('footer.support') }}</h3>
+          <h3 class="text-lg font-semibold mb-4 text-gray-800">
+            {{ $t('footer.support') }}
+          </h3>
           <ul class="space-y-2">
             <li>
               <a
                 href="#"
-                class="text-gray-400 hover:text-white transition-colors"
+                class="text-gray-600 hover:text-primary-600 transition-colors"
               >
                 {{ $t('footer.helpCenter') }}
               </a>
@@ -115,7 +119,7 @@
             <li>
               <a
                 href="#"
-                class="text-gray-400 hover:text-white transition-colors"
+                class="text-gray-600 hover:text-primary-600 transition-colors"
               >
                 {{ $t('footer.returns') }}
               </a>
@@ -123,7 +127,7 @@
             <li>
               <a
                 href="#"
-                class="text-gray-400 hover:text-white transition-colors"
+                class="text-gray-600 hover:text-primary-600 transition-colors"
               >
                 {{ $t('footer.shipping') }}
               </a>
@@ -131,7 +135,7 @@
             <li>
               <a
                 href="#"
-                class="text-gray-400 hover:text-white transition-colors"
+                class="text-gray-600 hover:text-primary-600 transition-colors"
               >
                 {{ $t('footer.privacy') }}
               </a>
@@ -141,27 +145,27 @@
       </div>
 
       <!-- Bottom section -->
-      <div class="border-t border-gray-800 mt-8 pt-8">
+      <div class="border-t border-gray-200 mt-8 pt-8">
         <div class="flex flex-col md:flex-row justify-between items-center">
-          <p class="text-gray-400 text-sm">
+          <p class="text-gray-500 text-sm">
             {{ $t('footer.copyright') }}
           </p>
           <div class="flex space-x-6 mt-4 md:mt-0">
             <a
               href="#"
-              class="text-gray-400 hover:text-white text-sm transition-colors"
+              class="text-gray-500 hover:text-primary-600 text-sm transition-colors"
             >
               {{ $t('footer.terms') }}
             </a>
             <a
               href="#"
-              class="text-gray-400 hover:text-white text-sm transition-colors"
+              class="text-gray-500 hover:text-primary-600 text-sm transition-colors"
             >
               {{ $t('footer.privacy') }}
             </a>
             <a
               href="#"
-              class="text-gray-400 hover:text-white text-sm transition-colors"
+              class="text-gray-500 hover:text-primary-600 text-sm transition-colors"
             >
               {{ $t('footer.cookies') }}
             </a>

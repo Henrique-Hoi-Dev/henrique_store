@@ -1,17 +1,18 @@
 <template>
   <div
-    class="group bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
+    class="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden border border-gray-100"
   >
     <!-- Product Image -->
     <div class="relative overflow-hidden">
       <img
-        :src="product.image || '/images/placeholder.jpg'"
+        :src="product.image || '/images/placeholder.svg'"
         :alt="product.name"
-        class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+        class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+        @error="handleImageError"
       />
 
       <!-- Discount Badge -->
-      <div v-if="hasDiscount" class="absolute top-3 left-3">
+      <div v-if="hasDiscount" class="absolute top-4 left-4">
         <span
           class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg"
         >
@@ -22,7 +23,7 @@
       <!-- Favorite Button -->
       <button
         @click="toggleFavorite"
-        class="absolute top-3 right-3 p-2 bg-white/90 dark:bg-gray-800/90 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 group-hover:opacity-100"
+        class="absolute top-4 right-4 p-2 bg-white/90 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110"
       >
         <svg
           v-if="product.isFavorite"
@@ -52,11 +53,11 @@
 
       <!-- Quick View Overlay -->
       <div
-        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
       >
         <NuxtLink
           :to="`/produto/${product.slug}`"
-          class="bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors transform scale-90 group-hover:scale-100 transition-transform duration-300"
+          class="bg-white text-gray-800 px-6 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-colors transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-lg"
         >
           {{ $t('products.viewDetails') }}
         </NuxtLink>
@@ -66,9 +67,9 @@
     <!-- Product Info -->
     <div class="p-6">
       <!-- Category -->
-      <div class="mb-2">
+      <div class="mb-3">
         <span
-          class="text-xs font-medium text-primary-600 dark:text-primary-400 uppercase tracking-wide"
+          class="text-xs font-semibold text-primary-600 uppercase tracking-wide bg-primary-50 px-2 py-1 rounded-full"
         >
           {{ getCategoryName(product.category) }}
         </span>
@@ -76,13 +77,13 @@
 
       <!-- Product Name -->
       <h3
-        class="text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2 group-hover:text-primary-600 transition-colors"
+        class="text-lg font-semibold text-gray-800 mb-3 line-clamp-2 group-hover:text-primary-600 transition-colors"
       >
         {{ product.name }}
       </h3>
 
       <!-- Rating -->
-      <div class="flex items-center mb-3">
+      <div class="flex items-center mb-4">
         <div class="flex items-center">
           <svg
             v-for="star in 5"
@@ -101,18 +102,18 @@
             />
           </svg>
         </div>
-        <span class="text-sm text-gray-600 dark:text-gray-400 ml-2">
+        <span class="text-sm text-gray-500 ml-2">
           {{ product.rating }} ({{ product.reviews }})
         </span>
       </div>
 
       <!-- Price -->
-      <div class="flex items-center justify-between mb-4">
+      <div class="flex items-center justify-between mb-6">
         <div class="flex items-center space-x-2">
-          <span class="text-2xl font-bold text-gray-900 dark:text-white">
+          <span class="text-2xl font-bold text-gray-800">
             {{ formatPrice(product.price) }}
           </span>
-          <span v-if="hasDiscount" class="text-lg text-gray-500 line-through">
+          <span v-if="hasDiscount" class="text-lg text-gray-400 line-through">
             {{ formatPrice(product.originalPrice) }}
           </span>
         </div>
@@ -124,7 +125,7 @@
             :class="product.inStock ? 'bg-green-500' : 'bg-red-500'"
           ></div>
           <span
-            class="text-sm ml-1"
+            class="text-sm ml-1 font-medium"
             :class="product.inStock ? 'text-green-600' : 'text-red-600'"
           >
             {{
@@ -141,7 +142,7 @@
         <button
           @click="addToCart"
           :disabled="!product.inStock"
-          class="w-full bg-primary-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-primary-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+          class="w-full bg-primary-600 text-white py-3 px-4 rounded-xl font-semibold hover:bg-primary-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
         >
           <span v-if="!product.inStock">{{ $t('products.outOfStock') }}</span>
           <span v-else>{{ $t('products.addToCart') }}</span>
@@ -149,7 +150,7 @@
 
         <NuxtLink
           :to="`/produto/${product.slug}`"
-          class="block w-full bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white py-3 px-4 rounded-lg font-semibold hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-300 text-center"
+          class="block w-full bg-gray-50 text-gray-700 py-3 px-4 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 text-center border border-gray-200"
         >
           {{ $t('products.viewDetails') }}
         </NuxtLink>
@@ -210,6 +211,10 @@ const addToCart = () => {
     image: props.product.image,
     quantity: 1,
   });
+};
+
+const handleImageError = (event) => {
+  event.target.src = '/images/placeholder.svg';
 };
 </script>
 

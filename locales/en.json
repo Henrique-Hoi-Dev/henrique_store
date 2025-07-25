@@ -28,7 +28,11 @@
     "orders": "My Orders",
     "favorites": "Favorites",
     "settings": "Settings",
-    "logout": "Logout"
+    "logout": "Logout",
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "contact": "Contact"
   },
   "home": {
     "hero": {
@@ -58,6 +62,8 @@
     }
   },
   "products": {
+    "title": "Products",
+    "subtitle": "Discover our complete collection of products",
     "viewDetails": "View Details",
     "addToCart": "Add to Cart",
     "buyNow": "Buy Now",
@@ -68,7 +74,28 @@
     "reviews": "reviews",
     "sold": "sold",
     "save": "Save",
-    "notFound": "Product not found"
+    "notFound": "Product not found",
+    "stars": "stars",
+    "filters": {
+      "title": "Filters",
+      "categories": "Categories",
+      "price": "Price",
+      "rating": "Rating",
+      "clearFilters": "Clear Filters"
+    },
+    "results": "results",
+    "sort": {
+      "label": "Sort by",
+      "relevance": "Relevance",
+      "priceLow": "Lowest Price",
+      "priceHigh": "Highest Price",
+      "rating": "Rating",
+      "sold": "Most Sold"
+    },
+    "noResults": {
+      "title": "No products found",
+      "description": "Try adjusting the filters or search for another term"
+    }
   },
   "cart": {
     "title": "Shopping Cart",
@@ -156,7 +183,12 @@
       "forgotPassword": "Forgot password?",
       "submit": "Login",
       "noAccount": "Don't have an account?",
-      "signup": "Sign up"
+      "signup": "Sign up",
+      "createAccount": "Create a new account",
+      "rememberMe": "Remember me",
+      "loginButton": "Login",
+      "loggingIn": "Logging in...",
+      "orContinueWith": "Or continue with"
     },
     "register": {
       "title": "Register",
@@ -168,6 +200,11 @@
       "submit": "Register",
       "hasAccount": "Already have an account?",
       "signin": "Sign in"
+    },
+    "validation": {
+      "required": "This field is required",
+      "invalidEmail": "Invalid email",
+      "passwordMinLength": "Password must be at least 6 characters"
     }
   },
   "profile": {
@@ -199,6 +236,14 @@
     "privacy": "Privacy Policy",
     "newsletter": "Newsletter",
     "subscribe": "Subscribe",
-    "emailPlaceholder": "Your email"
+    "emailPlaceholder": "Your email",
+    "description": "Your trusted online store for quality products.",
+    "quickLinks": "Quick Links",
+    "support": "Support",
+    "helpCenter": "Help Center",
+    "returns": "Returns & Exchanges",
+    "shipping": "Shipping Information",
+    "copyright": "© 2024 Henrique Store. All rights reserved.",
+    "cookies": "Cookies"
   }
 }

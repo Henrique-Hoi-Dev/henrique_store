@@ -6,10 +6,10 @@
         <h1
           class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2"
         >
-          {{ $t('checkout.title') }}
+          {{ t('checkout.title') }}
         </h1>
         <p class="text-gray-600 dark:text-gray-400">
-          {{ $t('checkout.subtitle') }}
+          {{ t('checkout.subtitle') }}
         </p>
       </div>
 
@@ -32,16 +32,16 @@
           </svg>
         </div>
         <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-          {{ $t('checkout.empty.title') }}
+          {{ t('checkout.empty.title') }}
         </h2>
         <p class="text-gray-600 dark:text-gray-400 mb-8 max-w-md mx-auto">
-          {{ $t('checkout.empty.description') }}
+          {{ t('checkout.empty.description') }}
         </p>
         <NuxtLink
           to="/"
           class="inline-flex items-center bg-primary-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
         >
-          {{ $t('checkout.empty.startShopping') }}
+          {{ t('checkout.empty.startShopping') }}
         </NuxtLink>
       </div>
 
@@ -53,7 +53,7 @@
             <h2
               class="text-xl font-semibold text-gray-900 dark:text-white mb-6"
             >
-              {{ $t('checkout.shipping.title') }}
+              {{ t('checkout.shipping.title') }}
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -61,13 +61,13 @@
                 <label
                   class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
-                  {{ $t('checkout.shipping.firstName') }}
+                  {{ t('checkout.shipping.firstName') }}
                 </label>
                 <input
                   v-model="form.firstName"
                   type="text"
                   class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
-                  :placeholder="$t('checkout.shipping.firstNamePlaceholder')"
+                  :placeholder="t('checkout.shipping.firstNamePlaceholder')"
                 />
               </div>
 
@@ -75,13 +75,13 @@
                 <label
                   class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
-                  {{ $t('checkout.shipping.lastName') }}
+                  {{ t('checkout.shipping.lastName') }}
                 </label>
                 <input
                   v-model="form.lastName"
                   type="text"
                   class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
-                  :placeholder="$t('checkout.shipping.lastNamePlaceholder')"
+                  :placeholder="t('checkout.shipping.lastNamePlaceholder')"
                 />
               </div>
 
@@ -89,13 +89,13 @@
                 <label
                   class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
-                  {{ $t('checkout.shipping.email') }}
+                  {{ t('checkout.shipping.email') }}
                 </label>
                 <input
                   v-model="form.email"
                   type="email"
                   class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
-                  :placeholder="$t('checkout.shipping.emailPlaceholder')"
+                  :placeholder="t('checkout.shipping.emailPlaceholder')"
                 />
               </div>
 
@@ -103,13 +103,13 @@
                 <label
                   class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
-                  {{ $t('checkout.shipping.phone') }}
+                  {{ t('checkout.shipping.phone') }}
                 </label>
                 <input
                   v-model="form.phone"
                   type="tel"
                   class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
-                  :placeholder="$t('checkout.shipping.phonePlaceholder')"
+                  :placeholder="t('checkout.shipping.phonePlaceholder')"
                 />
               </div>
 
@@ -117,13 +117,13 @@
                 <label
                   class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
-                  {{ $t('checkout.shipping.address') }}
+                  {{ t('checkout.shipping.address') }}
                 </label>
                 <input
                   v-model="form.address"
                   type="text"
                   class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
-                  :placeholder="$t('checkout.shipping.addressPlaceholder')"
+                  :placeholder="t('checkout.shipping.addressPlaceholder')"
                 />
               </div>
 
@@ -131,13 +131,13 @@
                 <label
                   class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
-                  {{ $t('checkout.shipping.city') }}
+                  {{ t('checkout.shipping.city') }}
                 </label>
                 <input
                   v-model="form.city"
                   type="text"
                   class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
-                  :placeholder="$t('checkout.shipping.cityPlaceholder')"
+                  :placeholder="t('checkout.shipping.cityPlaceholder')"
                 />
               </div>
 
@@ -145,14 +145,14 @@
                 <label
                   class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
-                  {{ $t('checkout.shipping.state') }}
+                  {{ t('checkout.shipping.state') }}
                 </label>
                 <select
                   v-model="form.state"
                   class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
                 >
                   <option value="">
-                    {{ $t('checkout.shipping.selectState') }}
+                    {{ t('checkout.shipping.selectState') }}
                   </option>
                   <option value="SP">São Paulo</option>
                   <option value="RJ">Rio de Janeiro</option>
@@ -171,13 +171,13 @@
                 <label
                   class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
-                  {{ $t('checkout.shipping.zipCode') }}
+                  {{ t('checkout.shipping.zipCode') }}
                 </label>
                 <input
                   v-model="form.zipCode"
                   type="text"
                   class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
-                  :placeholder="$t('checkout.shipping.zipCodePlaceholder')"
+                  :placeholder="t('checkout.shipping.zipCodePlaceholder')"
                 />
               </div>
             </div>
@@ -188,7 +188,7 @@
             <h2
               class="text-xl font-semibold text-gray-900 dark:text-white mb-6"
             >
-              {{ $t('checkout.payment.title') }}
+              {{ t('checkout.payment.title') }}
             </h2>
 
             <div class="space-y-6">
@@ -197,7 +197,7 @@
                 <label
                   class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-4"
                 >
-                  {{ $t('checkout.payment.method') }}
+                  {{ t('checkout.payment.method') }}
                 </label>
                 <div class="space-y-3">
                   <label
@@ -226,11 +226,11 @@
                         </svg>
                         <span
                           class="font-medium text-gray-900 dark:text-white"
-                          >{{ $t('checkout.payment.creditCard') }}</span
+                          >{{ t('checkout.payment.creditCard') }}</span
                         >
                       </div>
                       <p class="text-sm text-gray-600 dark:text-gray-400">
-                        {{ $t('checkout.payment.creditCardDescription') }}
+                        {{ t('checkout.payment.creditCardDescription') }}
                       </p>
                     </div>
                   </label>
@@ -261,11 +261,11 @@
                         </svg>
                         <span
                           class="font-medium text-gray-900 dark:text-white"
-                          >{{ $t('checkout.payment.pix') }}</span
+                          >{{ t('checkout.payment.pix') }}</span
                         >
                       </div>
                       <p class="text-sm text-gray-600 dark:text-gray-400">
-                        {{ $t('checkout.payment.pixDescription') }}
+                        {{ t('checkout.payment.pixDescription') }}
                       </p>
                     </div>
                   </label>
@@ -296,11 +296,11 @@
                         </svg>
                         <span
                           class="font-medium text-gray-900 dark:text-white"
-                          >{{ $t('checkout.payment.boleto') }}</span
+                          >{{ t('checkout.payment.boleto') }}</span
                         >
                       </div>
                       <p class="text-sm text-gray-600 dark:text-gray-400">
-                        {{ $t('checkout.payment.boletoDescription') }}
+                        {{ t('checkout.payment.boletoDescription') }}
                       </p>
                     </div>
                   </label>
@@ -313,13 +313,13 @@
                   <label
                     class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                   >
-                    {{ $t('checkout.payment.cardNumber') }}
+                    {{ t('checkout.payment.cardNumber') }}
                   </label>
                   <input
                     v-model="form.cardNumber"
                     type="text"
                     class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
-                    :placeholder="$t('checkout.payment.cardNumberPlaceholder')"
+                    :placeholder="t('checkout.payment.cardNumberPlaceholder')"
                   />
                 </div>
 
@@ -328,15 +328,13 @@
                     <label
                       class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                     >
-                      {{ $t('checkout.payment.expiryDate') }}
+                      {{ t('checkout.payment.expiryDate') }}
                     </label>
                     <input
                       v-model="form.expiryDate"
                       type="text"
                       class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
-                      :placeholder="
-                        $t('checkout.payment.expiryDatePlaceholder')
-                      "
+                      :placeholder="t('checkout.payment.expiryDatePlaceholder')"
                     />
                   </div>
 
@@ -344,13 +342,13 @@
                     <label
                       class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                     >
-                      {{ $t('checkout.payment.cvv') }}
+                      {{ t('checkout.payment.cvv') }}
                     </label>
                     <input
                       v-model="form.cvv"
                       type="text"
                       class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
-                      :placeholder="$t('checkout.payment.cvvPlaceholder')"
+                      :placeholder="t('checkout.payment.cvvPlaceholder')"
                     />
                   </div>
                 </div>
@@ -367,7 +365,7 @@
             <h2
               class="text-xl font-semibold text-gray-900 dark:text-white mb-6"
             >
-              {{ $t('checkout.summary.title') }}
+              {{ t('checkout.summary.title') }}
             </h2>
 
             <!-- Order Items -->
@@ -389,7 +387,7 @@
                     {{ item.name }}
                   </h3>
                   <p class="text-sm text-gray-600 dark:text-gray-400">
-                    {{ $t('checkout.summary.quantity') }}: {{ item.quantity }}
+                    {{ t('checkout.summary.quantity') }}: {{ item.quantity }}
                   </p>
                 </div>
                 <span
@@ -404,7 +402,7 @@
             <div class="space-y-3 mb-6">
               <div class="flex justify-between">
                 <span class="text-gray-600 dark:text-gray-400">
-                  {{ $t('checkout.summary.subtotal') }}
+                  {{ t('checkout.summary.subtotal') }}
                 </span>
                 <span class="font-semibold text-gray-900 dark:text-white">
                   {{ formatPrice(subtotal) }}
@@ -413,16 +411,16 @@
 
               <div class="flex justify-between">
                 <span class="text-gray-600 dark:text-gray-400">
-                  {{ $t('checkout.summary.shipping') }}
+                  {{ t('checkout.summary.shipping') }}
                 </span>
                 <span class="font-semibold text-green-600">
-                  {{ $t('checkout.summary.free') }}
+                  {{ t('checkout.summary.free') }}
                 </span>
               </div>
 
               <div class="flex justify-between">
                 <span class="text-gray-600 dark:text-gray-400">
-                  {{ $t('checkout.summary.tax') }}
+                  {{ t('checkout.summary.tax') }}
                 </span>
                 <span class="font-semibold text-gray-900 dark:text-white">
                   {{ formatPrice(tax) }}
@@ -432,7 +430,7 @@
               <div class="border-t border-gray-200 dark:border-gray-700 pt-3">
                 <div class="flex justify-between">
                   <span class="text-lg font-bold text-gray-900 dark:text-white">
-                    {{ $t('checkout.summary.total') }}
+                    {{ t('checkout.summary.total') }}
                   </span>
                   <span class="text-2xl font-bold text-primary-600">
                     {{ formatPrice(total) }}
@@ -448,9 +446,9 @@
               class="w-full bg-primary-600 text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-primary-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               <span v-if="processing">{{
-                $t('checkout.summary.processing')
+                t('checkout.summary.processing')
               }}</span>
-              <span v-else>{{ $t('checkout.summary.placeOrder') }}</span>
+              <span v-else>{{ t('checkout.summary.placeOrder') }}</span>
             </button>
 
             <!-- Security Badge -->
@@ -472,7 +470,7 @@
                 <span
                   class="text-sm text-green-700 dark:text-green-400 font-medium"
                 >
-                  {{ $t('checkout.summary.secureCheckout') }}
+                  {{ t('checkout.summary.secureCheckout') }}
                 </span>
               </div>
             </div>
@@ -484,7 +482,9 @@
 </template>
 
 <script setup>
-const { $t } = useNuxtApp();
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 const router = useRouter();
 const { cartItems, clearCart, formatPrice } = useCart();
 

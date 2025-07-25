@@ -40,10 +40,7 @@ export const useCart = () => {
   };
 
   const calculateSubtotal = (items) => {
-    return items.reduce(
-      (total, item) => total + item.preco * item.quantidade,
-      0
-    );
+    return items.reduce((total, item) => total + item.price * item.quantity, 0);
   };
 
   const calculateShipping = (subtotal) => {
@@ -60,6 +57,7 @@ export const useCart = () => {
     cartItems: computed(() => cartStore.items),
     items: computed(() => cartStore.items),
     totalItems: computed(() => cartStore.totalItems),
+    cartItemCount: computed(() => cartStore.totalItems),
     totalPrice: computed(() => cartStore.totalPrice),
     formattedTotalPrice: computed(() => cartStore.formattedTotalPrice),
     isEmpty: computed(() => cartStore.isEmpty),

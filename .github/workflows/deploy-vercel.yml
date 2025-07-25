@@ -6,10 +6,12 @@ on:
   pull_request:
     branches: [main, master]
 
+env:
+  NODE_VERSION: '18'
+
 jobs:
   lint-and-test:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -17,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
 
       - name: Install dependencies
@@ -29,13 +31,10 @@ jobs:
       - name: Run type checking
         run: npm run typecheck
 
-      - name: Build project
-        run: npm run build
+      - name: Run tests
+        run: npm run test
 
-      - name: Run tests (if available)
-        run: npm test --if-present
-
-  deploy:
+  deploy-vercel:
     needs: lint-and-test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
@@ -47,14 +46,18 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Build project
+      - name: Build application
         run: npm run build
+        env:
+          MERCADO_PAGO_ACCESS_TOKEN: ${{ secrets.MERCADO_PAGO_ACCESS_TOKEN }}
+          MERCADO_PAGO_WEBHOOK_URL: ${{ secrets.MERCADO_PAGO_WEBHOOK_URL }}
+          API_BASE_URL: ${{ secrets.API_BASE_URL }}
 
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v25

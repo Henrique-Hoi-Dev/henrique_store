@@ -27,7 +27,7 @@
       <div
         class="bg-gray-200 dark:bg-gray-700 rounded-lg h-64 flex items-center justify-center"
       >
-        <Icon
+        <NuxtIcon
           name="heroicons:building-storefront"
           class="w-32 h-32 text-gray-400"
         />
@@ -39,7 +39,7 @@
         <div
           class="w-16 h-16 mx-auto mb-4 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center"
         >
-          <Icon name="heroicons:heart" class="w-8 h-8 text-primary-600" />
+          <NuxtIcon name="heroicons:heart" class="w-8 h-8 text-primary-600" />
         </div>
         <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
           Qualidade
@@ -54,7 +54,7 @@
         <div
           class="w-16 h-16 mx-auto mb-4 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center"
         >
-          <Icon name="heroicons:truck" class="w-8 h-8 text-green-600" />
+          <NuxtIcon name="heroicons:truck" class="w-8 h-8 text-green-600" />
         </div>
         <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
           Entrega Rápida
@@ -68,7 +68,10 @@
         <div
           class="w-16 h-16 mx-auto mb-4 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center"
         >
-          <Icon name="heroicons:shield-check" class="w-8 h-8 text-blue-600" />
+          <NuxtIcon
+            name="heroicons:shield-check"
+            class="w-8 h-8 text-blue-600"
+          />
         </div>
         <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
           Segurança
@@ -87,7 +90,10 @@
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="flex items-start space-x-4">
-          <Icon name="heroicons:star" class="w-6 h-6 text-yellow-500 mt-1" />
+          <NuxtIcon
+            name="heroicons:star"
+            class="w-6 h-6 text-yellow-500 mt-1"
+          />
           <div>
             <h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-2">
               Excelência
@@ -100,7 +106,7 @@
         </div>
 
         <div class="flex items-start space-x-4">
-          <Icon name="heroicons:users" class="w-6 h-6 text-blue-500 mt-1" />
+          <NuxtIcon name="heroicons:users" class="w-6 h-6 text-blue-500 mt-1" />
           <div>
             <h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-2">
               Cliente em Primeiro Lugar
@@ -113,7 +119,7 @@
         </div>
 
         <div class="flex items-start space-x-4">
-          <Icon
+          <NuxtIcon
             name="heroicons:light-bulb"
             class="w-6 h-6 text-green-500 mt-1"
           />
@@ -129,7 +135,7 @@
         </div>
 
         <div class="flex items-start space-x-4">
-          <Icon
+          <NuxtIcon
             name="heroicons:hand-raised"
             class="w-6 h-6 text-purple-500 mt-1"
           />
