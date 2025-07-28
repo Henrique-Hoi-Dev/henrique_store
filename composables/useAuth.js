@@ -11,8 +11,12 @@ export const useAuth = () => {
     return await userStore.register(userData);
   };
 
-  const logout = () => {
-    userStore.logout();
+  const logout = async () => {
+    await userStore.logout();
+  };
+
+  const verifyToken = async () => {
+    return await userStore.verifyToken();
   };
 
   const updateProfile = async (profileData) => {
@@ -115,6 +119,7 @@ export const useAuth = () => {
     login,
     register,
     logout,
+    verifyToken,
     updateProfile,
     changePassword,
 

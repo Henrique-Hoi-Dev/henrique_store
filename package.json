@@ -35,9 +35,8 @@
     "vitest": "^1.0.0"
   },
   "dependencies": {
-    "mercadopago": "^2.0.0",
-    "nuxt-icon": "^1.0.0-beta.7",
-    "pinia": "2.1.7"
+    "pinia": "2.1.7",
+    "axios": "^1.6.0"
   },
   "engines": {
     "node": ">=18.0.0"

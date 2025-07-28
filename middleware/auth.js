@@ -1,5 +1,17 @@
-export default defineNuxtRouteMiddleware((to) => {
-  const { isAuthenticated, isAdmin } = useAuth();
+export default defineNuxtRouteMiddleware(async (to) => {
+  const { isAuthenticated, isAdmin, verifyToken } = useAuth();
+
+  // Verificar token automaticamente se não estiver autenticado mas tiver token
+  if (!isAuthenticated.value) {
+    const userStore = useUserStore();
+    if (userStore.token) {
+      const isValid = await verifyToken();
+      if (!isValid) {
+        // Token inválido, redirecionar para login
+        return navigateTo('/login');
+      }
+    }
+  }
 
   // Se a rota começa com /admin, verificar se é admin
   if (to.path.startsWith('/admin')) {
