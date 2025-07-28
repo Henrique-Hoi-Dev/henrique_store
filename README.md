@@ -1,85 +1,47 @@
-# Henrique Store - E-commerce Nuxt 3
+# Henrique Store - Frontend
 
-Um projeto de e-commerce completo desenvolvido com Nuxt 3, Tailwind CSS e Pinia para gerenciamento de estado.
+Frontend do e-commerce construído com Nuxt 3, integrado com microserviços.
 
-## 🚀 Características
+## 🚀 Funcionalidades
 
-- **Nuxt 3** - Framework Vue.js moderno
-- **Tailwind CSS** - Framework CSS utilitário
-- **Pinia** - Gerenciamento de estado
-- **Dark Mode** - Suporte completo ao modo escuro
-- **Responsivo** - Design adaptável para todos os dispositivos
-- **TypeScript** - Tipagem estática (opcional)
-- **Fonte Inter** - Tipografia moderna e legível
+- **Autenticação Integrada**: Integração completa com o microserviço de autenticação
+- **Verificação Automática de Token**: Verificação automática de tokens JWT
+- **Middleware de Proteção**: Rotas protegidas com verificação de token
+- **Interface Responsiva**: Design moderno e responsivo
+- **Internacionalização**: Suporte a português e inglês
+- **Gerenciamento de Estado**: Usando Pinia para gerenciamento de estado
 
-## 📁 Estrutura do Projeto
+## 🔧 Configuração
 
-```
-henrique_store/
-├── assets/
-│   └── css/
-│       └── main.css          # Estilos globais e Tailwind
-├── components/
-│   ├── Header.vue           # Cabeçalho da loja
-│   ├── Footer.vue           # Rodapé da loja
-│   └── CardProduto.vue      # Card de produto
-├── composables/
-│   ├── useCart.js           # Lógica do carrinho
-│   └── useAuth.js           # Lógica de autenticação
-├── layouts/
-│   ├── default.vue          # Layout padrão da loja
-│   └── admin.vue            # Layout do painel admin
-├── middleware/
-│   └── auth.js              # Middleware de autenticação
-├── pages/
-│   ├── index.vue            # Página inicial
-│   ├── produtos/
-│   │   └── index.vue        # Listagem de produtos
-│   ├── carrinho.vue         # Carrinho de compras
-│   ├── login.vue            # Página de login
-│   └── admin/               # Páginas do admin
-├── public/
-│   └── images/              # Imagens estáticas
-├── stores/
-│   ├── cart.js              # Store do carrinho
-│   ├── user.js              # Store do usuário
-│   └── orders.js            # Store de pedidos
-├── utils/
-│   └── format.js            # Utilitários de formatação
-├── nuxt.config.js           # Configuração do Nuxt
-└── package.json             # Dependências
-```
+### Variáveis de Ambiente
 
-## 🛠️ Instalação
-
-1. **Clone o repositório**
-
-   ```bash
-   git clone https://github.com/seu-usuario/henrique-store.git
-   cd henrique-store
-   ```
-
-2. **Instale as dependências**
-
-   ```bash
-   npm install
-   ```
-
-3. **Execute o servidor de desenvolvimento**
-
-   ```bash
-   npm run dev
-   ```
-
-4. **Acesse o projeto**
-   ```
-   http://localhost:3000
-   ```
-
-## 📦 Scripts Disponíveis
+Copie o arquivo `env.sample` para `.env` e configure as URLs dos microserviços:
 
 ```bash
-# Desenvolvimento
+cp env.sample .env
+```
+
+Configure as variáveis no arquivo `.env`:
+
+```env
+# Microserviços URLs
+AUTH_MS_URL=http://localhost:3001
+USER_MS_URL=http://localhost:3002
+PRODUCT_MS_URL=http://localhost:3003
+SALES_MS_URL=http://localhost:3004
+NOTIFICATIONS_MS_URL=http://localhost:3005
+
+# Configurações do frontend
+NUXT_PUBLIC_SITE_URL=http://localhost:3000
+```
+
+### Instalação
+
+```bash
+# Instalar dependências
+npm install
+
+# Executar em modo de desenvolvimento
 npm run dev
 
 # Build para produção
@@ -87,160 +49,107 @@ npm run build
 
 # Preview da build
 npm run preview
-
-# Gerar site estático
-npm run generate
 ```
 
-## 🎨 Personalização
+## 🔐 Autenticação
 
-### Cores do Tema
+### Integração com Microserviço
 
-As cores principais podem ser alteradas no arquivo `nuxt.config.js`:
+O frontend está totalmente integrado com o microserviço de autenticação (`ms_auth`):
+
+- **Login**: `POST /auth/login`
+- **Registro**: `POST /auth/register`
+- **Logout**: `POST /auth/logout`
+- **Verificação de Token**: `GET /auth/verify-token`
+
+### Verificação Automática de Token
+
+O sistema verifica automaticamente a validade dos tokens:
+
+1. **Plugin de Inicialização**: Verifica token ao carregar a aplicação
+2. **Middleware de Rota**: Verifica token em rotas protegidas
+3. **Store de Usuário**: Gerencia estado de autenticação
+
+### Rotas Protegidas
+
+- `/admin/*` - Requer autenticação e role de admin
+- `/checkout` - Requer autenticação
+- `/perfil` - Requer autenticação
+
+## 📁 Estrutura do Projeto
+
+```
+henrique_store/
+├── components/          # Componentes Vue
+├── composables/         # Composables (useAuth, useCart, etc.)
+├── middleware/          # Middleware de rota
+├── pages/              # Páginas da aplicação
+├── plugins/            # Plugins Nuxt
+├── server/             # API do servidor
+│   ├── api/           # Endpoints da API
+│   └── middleware/    # Middleware do servidor
+├── stores/            # Stores Pinia
+└── utils/             # Utilitários
+```
+
+## 🔄 API Endpoints
+
+### Endpoints Públicos
+
+- `POST /api/auth/verify-token` - Verificar token JWT
+
+### Endpoints Protegidos
+
+- `GET /api/protected/user-profile` - Perfil do usuário autenticado
+
+## 🛠️ Desenvolvimento
+
+### Adicionando Novos Endpoints Protegidos
+
+1. Crie o arquivo em `server/api/protected/`
+2. O middleware de autenticação será aplicado automaticamente
+3. Acesse os dados do usuário via `event.context.user`
+
+### Exemplo de Endpoint Protegido
 
 ```javascript
-tailwindcss: {
-  config: {
-    theme: {
-      extend: {
-        colors: {
-          primary: {
-            50: '#eff6ff',
-            100: '#dbeafe',
-            // ... outras variações
-            900: '#1e3a8a'
-          }
-        }
-      }
-    }
-  }
-}
+// server/api/protected/example.js
+export default defineEventHandler(async (event) => {
+  const user = event.context.user;
+
+  return {
+    success: true,
+    data: {
+      message: `Olá ${user.name}!`,
+    },
+  };
+});
 ```
-
-### Fonte
-
-A fonte Inter está configurada por padrão. Para alterar, modifique o `nuxt.config.js`:
-
-```javascript
-app: {
-  head: {
-    link: [
-      // Altere a URL da fonte aqui
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=SuaFonte:wght@300;400;500;600;700&display=swap',
-      },
-    ];
-  }
-}
-```
-
-## 🔧 Configurações
-
-### Tailwind CSS
-
-O Tailwind está configurado com:
-
-- Fonte Inter
-- Cores primárias customizadas
-- Suporte a dark mode
-- Componentes utilitários
-
-### Pinia Stores
-
-O projeto inclui três stores principais:
-
-1. **Cart Store** - Gerencia o carrinho de compras
-2. **User Store** - Gerencia autenticação e dados do usuário
-3. **Orders Store** - Gerencia pedidos e histórico
-
-### Middleware
-
-O middleware de autenticação protege:
-
-- Rotas `/admin/*` - Requer autenticação e permissão de admin
-- Rota `/checkout` - Requer autenticação
-- Rota `/perfil` - Requer autenticação
-
-## 📱 Páginas Principais
-
-### Loja
-
-- **Home** (`/`) - Página inicial com produtos em destaque
-- **Produtos** (`/produtos`) - Catálogo com filtros
-- **Carrinho** (`/carrinho`) - Carrinho de compras
-- **Login** (`/login`) - Autenticação
-- **Cadastro** (`/cadastro`) - Registro de usuário
-
-### Admin
-
-- **Dashboard** (`/admin/dashboard`) - Painel principal
-- **Produtos** (`/admin/produtos`) - Gerenciamento de produtos
-- **Pedidos** (`/admin/pedidos`) - Gerenciamento de pedidos
-
-## 🎯 Funcionalidades
-
-### Carrinho de Compras
-
-- Adicionar/remover produtos
-- Alterar quantidades
-- Cálculo automático de frete
-- Persistência no localStorage
-
-### Autenticação
-
-- Login/Logout
-- Registro de usuário
-- Validação de formulários
-- Proteção de rotas
-
-### Produtos
-
-- Listagem com filtros
-- Busca por categoria
-- Ordenação por preço/avaliação
-- Paginação
-
-### Dark Mode
-
-- Toggle automático
-- Persistência da preferência
-- Suporte completo em todos os componentes
 
 ## 🚀 Deploy
 
-### Vercel (Recomendado)
+### Docker
 
 ```bash
-npm run build
+# Build da imagem
+docker build -t henrique-store .
+
+# Executar container
+docker run -p 3000:3000 henrique-store
 ```
 
-### Netlify
+### Variáveis de Ambiente para Produção
 
-```bash
-npm run generate
+Configure as URLs dos microserviços para o ambiente de produção:
+
+```env
+AUTH_MS_URL=https://auth-api.seudominio.com
+USER_MS_URL=https://user-api.seudominio.com
+PRODUCT_MS_URL=https://product-api.seudominio.com
+SALES_MS_URL=https://sales-api.seudominio.com
+NOTIFICATIONS_MS_URL=https://notifications-api.seudominio.com
 ```
 
-### Outros
+## 📝 Licença
 
-O projeto pode ser deployado em qualquer plataforma que suporte Node.js ou sites estáticos.
-
-## 🤝 Contribuição
-
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
-
-## 📞 Suporte
-
-Se você tiver alguma dúvida ou problema, abra uma issue no GitHub ou entre em contato.
-
----
-
-**Desenvolvido com ❤️ usando Nuxt 3**
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.

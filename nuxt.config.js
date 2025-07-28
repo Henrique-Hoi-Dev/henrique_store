@@ -9,6 +9,20 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
   ],
 
+  runtimeConfig: {
+    // Variáveis privadas (apenas servidor)
+    authMsUrl: process.env.AUTH_MS_URL || 'http://localhost:3001',
+    userMsUrl: process.env.USER_MS_URL || 'http://localhost:3002',
+    productMsUrl: process.env.PRODUCT_MS_URL || 'http://localhost:3003',
+    salesMsUrl: process.env.SALES_MS_URL || 'http://localhost:3004',
+    notificationsMsUrl: process.env.NOTIFICATIONS_MS_URL || 'http://localhost:3005',
+    
+    // Variáveis públicas (cliente e servidor)
+    public: {
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+    }
+  },
+
   i18n: {
     locales: [
       {

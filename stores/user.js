@@ -30,42 +30,59 @@ export const useUserStore = defineStore('user', {
     async login(credentials) {
       this.loading = true;
       try {
-        // Simular chamada de API
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        // Obter configuração do runtime
+        const config = useRuntimeConfig();
+        const AUTH_MS_URL = config.authMsUrl;
 
-        // Mock de resposta da API
-        const response = {
-          user: {
-            id: 1,
-            nome: 'João',
-            sobrenome: 'Silva',
+        // Chamar o microserviço de autenticação
+        const response = await $fetch(`${AUTH_MS_URL}/auth/login`, {
+          method: 'POST',
+          body: {
             email: credentials.email,
-            role: 'user',
-            telefone: '(11) 99999-9999',
-            endereco: {
-              cep: '01234-567',
-              rua: 'Rua das Flores',
-              numero: '123',
-              complemento: 'Apto 45',
-              bairro: 'Centro',
-              cidade: 'São Paulo',
-              estado: 'SP',
-            },
+            password: credentials.password,
           },
-          token: 'mock-jwt-token-12345',
-        };
+        });
 
-        this.user = response.user;
-        this.token = response.token;
-        this.isAuthenticated = true;
+        if (response.data) {
+          const { userId, email, name, role, accessToken, refreshToken } =
+            response.data;
 
-        // Salvar no localStorage
-        this.saveToLocalStorage();
+          // Separar nome e sobrenome
+          const nameParts = name.split(' ');
+          const nome = nameParts[0] || '';
+          const sobrenome = nameParts.slice(1).join(' ') || '';
 
-        return { success: true };
+          this.user = {
+            id: userId,
+            nome,
+            sobrenome,
+            email,
+            role,
+            telefone: '',
+            endereco: {
+              cep: '',
+              rua: '',
+              numero: '',
+              complemento: '',
+              bairro: '',
+              cidade: '',
+              estado: '',
+            },
+          };
+
+          this.token = accessToken;
+          this.isAuthenticated = true;
+
+          // Salvar no localStorage
+          this.saveToLocalStorage();
+
+          return { success: true };
+        }
+
+        return { success: false, error: 'Resposta inválida do servidor' };
       } catch (error) {
         console.error('Erro no login:', error);
-        return { success: false, error: error.message };
+        return { success: false, error: error.message || 'Erro no login' };
       } finally {
         this.loading = false;
       }
@@ -74,46 +91,145 @@ export const useUserStore = defineStore('user', {
     async register(userData) {
       this.loading = true;
       try {
-        // Simular chamada de API
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        // Obter configuração do runtime
+        const config = useRuntimeConfig();
+        const AUTH_MS_URL = config.authMsUrl;
 
-        // Mock de resposta da API
-        const response = {
-          user: {
-            id: 2,
-            nome: userData.nome,
-            sobrenome: userData.sobrenome,
-            email: userData.email,
-            role: 'user',
-            telefone: userData.telefone,
-            endereco: userData.endereco,
-          },
-          token: 'mock-jwt-token-new-user',
+        // Preparar dados para o microserviço
+        const registerData = {
+          email: userData.email,
+          password: userData.password,
+          name: `${userData.nome} ${userData.sobrenome}`.trim(),
+          role: 'BUYER',
         };
 
-        this.user = response.user;
-        this.token = response.token;
-        this.isAuthenticated = true;
+        // Chamar o microserviço de autenticação
+        const response = await $fetch(`${AUTH_MS_URL}/auth/register`, {
+          method: 'POST',
+          body: registerData,
+        });
 
-        // Salvar no localStorage
-        this.saveToLocalStorage();
+        if (response.data) {
+          const { userId, email, name, role, accessToken } = response.data;
 
-        return { success: true };
+          // Separar nome e sobrenome
+          const nameParts = name.split(' ');
+          const nome = nameParts[0] || '';
+          const sobrenome = nameParts.slice(1).join(' ') || '';
+
+          this.user = {
+            id: userId,
+            nome,
+            sobrenome,
+            email,
+            role,
+            telefone: userData.telefone || '',
+            endereco: userData.endereco || {
+              cep: '',
+              rua: '',
+              numero: '',
+              complemento: '',
+              bairro: '',
+              cidade: '',
+              estado: '',
+            },
+          };
+
+          this.token = accessToken;
+          this.isAuthenticated = true;
+
+          // Salvar no localStorage
+          this.saveToLocalStorage();
+
+          return { success: true };
+        }
+
+        return { success: false, error: 'Resposta inválida do servidor' };
       } catch (error) {
         console.error('Erro no registro:', error);
-        return { success: false, error: error.message };
+        return { success: false, error: error.message || 'Erro no registro' };
       } finally {
         this.loading = false;
       }
     },
 
-    logout() {
-      this.user = null;
-      this.token = null;
-      this.isAuthenticated = false;
+    async logout() {
+      try {
+        if (this.token) {
+          // Obter configuração do runtime
+          const config = useRuntimeConfig();
+          const AUTH_MS_URL = config.authMsUrl;
 
-      // Limpar localStorage
-      this.clearLocalStorage();
+          // Chamar logout no microserviço
+          await $fetch(`${AUTH_MS_URL}/auth/logout`, {
+            method: 'POST',
+            headers: {
+              Authorization: `Bearer ${this.token}`,
+            },
+          });
+        }
+      } catch (error) {
+        console.error('Erro no logout:', error);
+      } finally {
+        this.user = null;
+        this.token = null;
+        this.isAuthenticated = false;
+
+        // Limpar localStorage
+        this.clearLocalStorage();
+      }
+    },
+
+    async verifyToken() {
+      if (!this.token) {
+        return false;
+      }
+
+      try {
+        // Verificar token usando o endpoint local
+        const response = await $fetch('/api/auth/verify-token', {
+          method: 'POST',
+          body: {
+            token: this.token,
+          },
+        });
+
+        if (response.success && response.data) {
+          const { userId, email, name, role } = response.data;
+
+          // Separar nome e sobrenome
+          const nameParts = name.split(' ');
+          const nome = nameParts[0] || '';
+          const sobrenome = nameParts.slice(1).join(' ') || '';
+
+          this.user = {
+            id: userId,
+            nome,
+            sobrenome,
+            email,
+            role,
+            telefone: this.user?.telefone || '',
+            endereco: this.user?.endereco || {
+              cep: '',
+              rua: '',
+              numero: '',
+              complemento: '',
+              bairro: '',
+              cidade: '',
+              estado: '',
+            },
+          };
+
+          this.isAuthenticated = true;
+          return true;
+        }
+
+        return false;
+      } catch (error) {
+        console.error('Erro na verificação do token:', error);
+        this.logout();
+        return false;
+      }
     },
 
     async updateProfile(profileData) {
