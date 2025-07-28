@@ -34,21 +34,10 @@ export const useUserStore = defineStore('user', {
         const config = useRuntimeConfig();
         const AUTH_MS_URL = config.authMsUrl;
 
-<<<<<<< HEAD
-        // Mock de resposta da API
-        const response = {
-          user: {
-            id: 1,
-            firstName: 'João',
-            lastName: 'Silva',
-            nome: 'João',
-            sobrenome: 'Silva',
-=======
         // Chamar o microserviço de autenticação
         const response = await $fetch(`${AUTH_MS_URL}/auth/login`, {
           method: 'POST',
           body: {
->>>>>>> b88b91c51cad58ac1cb420d3d99e5a1208112444
             email: credentials.email,
             password: credentials.password,
           },
@@ -106,29 +95,12 @@ export const useUserStore = defineStore('user', {
         const config = useRuntimeConfig();
         const AUTH_MS_URL = config.authMsUrl;
 
-<<<<<<< HEAD
-        // Mock de resposta da API
-        const response = {
-          user: {
-            id: 2,
-            firstName: userData.firstName || userData.nome,
-            lastName: userData.lastName || userData.sobrenome,
-            nome: userData.nome,
-            sobrenome: userData.sobrenome,
-            email: userData.email,
-            role: 'user',
-            telefone: userData.telefone,
-            endereco: userData.endereco,
-          },
-          token: 'mock-jwt-token-new-user',
-=======
         // Preparar dados para o microserviço
         const registerData = {
           email: userData.email,
           password: userData.password,
           name: `${userData.nome} ${userData.sobrenome}`.trim(),
           role: 'BUYER',
->>>>>>> b88b91c51cad58ac1cb420d3d99e5a1208112444
         };
 
         // Chamar o microserviço de autenticação
